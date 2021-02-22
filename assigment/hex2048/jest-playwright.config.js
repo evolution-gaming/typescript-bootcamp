@@ -1,7 +1,8 @@
 module.exports = {
   launchOptions: {
     // set false if you want to see test in progress
-    headless: true,
+    slowMo: 200,
+    headless: false,
   },
   contextOptions: {
     ignoreHTTPSErrors: true,

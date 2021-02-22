@@ -1,6 +1,6 @@
 # Typesript Bootcamp
 
-This repository contains information on the [Evolution Gaming](https://eng.evolutiongaming.com/) Scala Bootcamp.
+This repository contains information on the [Evolution Gaming](https://eng.evolutiongaming.com/) Typescript Bootcamp.
 
 ## Schedule
 
@@ -29,13 +29,6 @@ The tests will fail (for now), this is normal and expected.
 
 In case of issues:
 - Ask in the Bootcamp chat
-
-## Learning resources
-
-All resources are listed in no particular order.
-
-### Other
-
 
 ### Non-Js
 

@@ -2,27 +2,27 @@
 
 ## Task description
 
-Your tak is to develop game [2048](https://play2048.co/) but on
+Your task is to develop game [2048](https://play2048.co/) but on
 [hexagonal field](http://hex2048.surge.sh/).
 
-You should develop the game with support radius 2. Additionally, you could add
-radius 3 and 4.
+You should develop the game with support the radius of 2 cells. Additionally,
+you could add radius 3 and 4.
 
 ### Rules
 
-You have six directions and six keys binding to these directions:
+You have six directions and six key binding to these directions:
 
 |            |       |
 | ---------- | ----- |
-| north      | key W |
-| north-east | key E |
-| north-west | key Q |
-| south      | key S |
-| south-east | key D |
-| south-west | key A |
+| north      | W key |
+| north-east | E key |
+| north-west | Q key |
+| south      | S key |
+| south-east | D key |
+| south-west | A key |
 
-After press any of the listed keys, all your board shifted in the same
-direction.
+After pressing any of the listed keys, all your board should be shifted in the
+same direction.
 
 **Shifting rules**
 
@@ -33,21 +33,13 @@ direction.
 |        2 4 2 4 | 2 4 2 4 |
 |        2 2 4 4 |     4 8 |
 
-You should develop the game with support radius 2. Additionally, you could add
-radius 3 and 4.
-
-You have six directions and six keys binding to these directions:
-
-After press any of the listed keys, all your board shifted in the same
-direction.
-
-After each shift, you need to add new numbers to the field in a random position.
-For this purpose, we add a random-number-generator(RNG) server. You can start it
-with the command `yarn rng-server`. This server expects that you'll send him
-your numbers with
+After each shift, you need to place new numbers in the field in a random
+positions. For this purpose, we added a random-number-generator(RNG) server. You
+can start it with the command `yarn rng-server`. This server expects you to send
+him your numbers with
 [cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube)
-and the server will answer where you should add new numbers. RNG-server is
-working on port 13337.
+and the server will answer where you should place those new RNG numbers.
+RNG-server is working on port 13337.
 
 Examples:
 
@@ -56,7 +48,7 @@ Examples:
 curl -d '[]' \
      -X POST http://localhost:13337/2
 
-// server answer
+// Server answer
 [
   {"x":0,"y":1,"z":-1,"value":2},
   {"x":1,"y":0,"z":-1,"value":2},
@@ -67,7 +59,7 @@ curl -d '[]' \
 curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
      -x post http://localhost:13337/2
 
-// server answer
+// Server answer
 [{"x":1,"y":-1,"z":0,"value":2}]
 ```
 

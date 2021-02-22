@@ -26,14 +26,6 @@ describe("Hex game launch", () => {
     await server.end()
   })
 
-  // beforeEach(async () => {
-    // page = await browser.newPage()
-  // })
-
-  // afterEach(async () => {
-  //   await page.close()
-  // })
-
   describe("radius 2", () => {
     radius = 2
     it("should render correct field with data-x, data-y, data-z, data-value with 0", async () => {
