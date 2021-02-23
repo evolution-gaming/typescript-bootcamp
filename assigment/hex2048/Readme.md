@@ -2,29 +2,48 @@
 
 ## Task description
 
-Your task is to develop game [2048](https://play2048.co/) but on
-[hexagonal field](http://hex2048.surge.sh/).
+Your task is to develop game [2048](https://play2048.co/) on hexagonal field.
+Please take a look our example: [hexagonal 2048](http://hex2048.surge.sh/).
 
-You should develop the game with support the radius of 2 cells. Additionally,
-you could add radius 3 and 4.
+What is required:
+- Have to render a game hexagonal field with hexagons according to the game size.
+- Required game size is 2. Existence of other game levels (3, 4, ...) is highly appreciated but NOT REQUIRED.
+- Have to receive data from the [server](#receiving-data-from-the-deployed-server) and render them correctly.
+- Have to handle appropriate keyboard keys according to the [rules](#directions-and-keys).
+- Have to change field data by clicking keyboard keys according to the [rules](#shifting-rules).
+- Have to work on the latest Google Chrome on the desktop (all other devices and browsers are up to you).
+- All other ideas, game features and controls, supported devices and so on are optional.
 
-### Rules
+Nice to have:
+- Several game levels (at least 3 and 4) ([example](http://hex2048.surge.sh/)).
 
-You have six directions and six key binding to these directions:
+More info:
+- The visual game appearance and technologies to implement the task are up to you and are restricted only your imagination.
+- Animations are appreciated but not required.
+- Useful article about hexagons: [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/).
 
-|            |       |
-| ---------- | ----- |
-| north      | W key |
-| north-east | E key |
-| north-west | Q key |
-| south      | S key |
-| south-east | D key |
-| south-west | A key |
+## Rules
 
-After pressing any of the listed keys, all your board should be shifted in the
-same direction.
+### Directions and Keys
 
-**Shifting rules**
+You have 6 keyboard keys (latin lower case letters) for 6 existing directions:
+
+| Direction                 | Keyboard key |
+| ------------------------- | ------------ |
+| north (top)               | W            |
+| north-east (top-right)    | E            |
+| north-west (top-left)     | Q            |
+| south (bottom)            | S            |
+| south-east (bottom-right) | D            |
+| south-west (bottom-left)  | A            |
+
+After pressing any of the listed keys, all your numbers should be shifted in the chosen direction.
+
+### Shifting rules
+
+Shifting works according to common [2048](https://play2048.co/) rules
+([RU](https://ru.wikipedia.org/wiki/2048_(%D0%B8%D0%B3%D1%80%D0%B0)) | [EN](https://en.wikipedia.org/wiki/2048_(video_game)))
+taking into account appropriate hexagonal direction.
 
 | before shift → |   after |
 | -------------: | ------: |
@@ -33,75 +52,180 @@ same direction.
 |        2 4 2 4 | 2 4 2 4 |
 |        2 2 4 4 |     4 8 |
 
-After each shift, you need to place new numbers in the field in a random
-positions. For this purpose, we added a random-number-generator(RNG) server. You
-can start it with the command `yarn rng-server`. This server expects you to send
-him your numbers with
-[cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube)
-and the server will answer where you should place those new RNG numbers.
-RNG-server is working on port 13337.
+After each shift, you need to place new numbers received from the [server](///).
 
-Examples:
+### Game status
+
+The game should know a current game status.
+
+Possible game statuses:
+- `playing` - there are possible moves that can be done.
+- `game-over` - there are no more possible moves.
+
+
+Game status should be present somewhere in your game DOM element (any one DOM element at the any place of DOM) as a data attribute `data-status`.
+Example:
+
+```html
+<div data-status="playing">My Hexagonal 2048 game</div>
+```
+
+## RNG Server
+
+## Receiving data from the deployed server
+
+For the game purposes, we have a [random number generator](https://en.wikipedia.org/wiki/Random_number_generation) (RNG) server
+that generates random numbers into random places for your field.
+
+The server expects you to send a POST request with correct body and pathname in the URL.
+Body has to be an array of non-empty cells (the number should be 2 and more) of your field. Cells order doesn't matter.
+A cell is an object which is a representation of [cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube).
+For example:
+```js
+const cell = {
+     x: 0,
+     y: 1,
+     z: -1,
+     value: 2,
+};
+```
+
+The server responds with array of the [cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube) cells
+that you need to add into your field. The servers sends an empty array in case of no more positions to add a new numbers.
+`x`, `y`, `z` are positions for new numbers. `value` is a number to add at that position.
+
+The server expects you to send the radius (game level) in the URL pathname (e.g., `/2` for 2, `/3` or 3, etc.).
+For example, correct server URL for game radius 2 is `http://51.15.207.127:13337/2`.
+
+Server URL: `51.15.207.127` or `be348fb6-960c-4f9a-9bdc-f38a83f20f18.pub.instances.scw.cloud`.
+
+Server port: `13337`.
+
+Example (initial game):
+
+```bash
+curl -d '[]' \
+     -X POST http://51.15.207.127:13337/2
+```
+
+Server response:
 
 ```
-// Initial game
-curl -d '[]' \
-     -X POST http://localhost:13337/2
-
-// Server answer
 [
-  {"x":0,"y":1,"z":-1,"value":2},
-  {"x":1,"y":0,"z":-1,"value":2},
-  {"x":1,"y":-1,"z ":0,"value":2}
+  { "x": 0, "y": 1, "z": -1, "value": 2},
+  { "x": 1, "y": 0, "z": -1, "value": 2},
+  { "x": 1, "y": -1, "z":  0, "value": 2}
 ]
+```
 
+Example with payload (filled cells):
 
+```bash
+curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
+     -x post http://51.15.207.127:13337/2
+```
+
+Server response:
+
+```
+[ { "x": 1, "y": -1, "z": 0, "value": 2 } ]
+```
+
+### Receiving data from the local server
+
+To start the server locally you should clone the repository, install dependencies and start the server:
+
+```
+git clone https://gitlab.evolutiongaming.com/asamofalov/typescript-bootcamp.git
+cd typescript-bootcamp/assigment/hex2048
+npm install
+npm run rng-server
+```
+
+Server URL: `http://localhost`.
+
+Server port: `13337`.
+
+Example:
+
+```bash
 curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
      -x post http://localhost:13337/2
-
-// Server answer
-[{"x":1,"y":-1,"z":0,"value":2}]
 ```
 
-The server expects you to send the radius in URL — `/2` for radius 2, `/3` for
-radius 3, etc. For the initial game, you should send an empty array. Also, you
-should have a status field with game status. The game can be either `playing` or
-`game-over`. Status game-over should inform the player when no one move is
-available.
+Server response:
 
-If no one number moves after pressing the key, you shouldn't add a new number
-from rng-server.
+```
+[ { "x": 1, "y": -1, "z": 0, "value": 2 } ]
+```
 
-#### How we will be testing your solution
+## How will your solution be tested?
 
-For testing your solution, we will be use [jest](https://jestjs.io/) and
-[playwright](https://playwright.dev/). We added a couple of tests, and you
-should test your solution with our tests. Use `yarn test` for the purpose.
+Every cell from the field should have appropriate data attributes: `data-x`, `data-y`, `data-z` and `data-value`.
+Where `data-x`, `data-y`, `data-z` are respective representations of cube coordinates `x`, `y`, `z`.
+And `data-value` is number into this cell (e.g., 2, 4, 8, etc. or 0 if there is no number yet).
 
-Our tests will check the field, and your field should contain elements with
-`data-x`, `data-y`, `data-z` and `data-value` attributes. You could check the
-example layout [here](http://hex2048.surge.sh/). Also, you need to mark a status
-message with a data-status attribute that will contain the game's status. Your
-game should understand the following URLs:
+Example:
+```html
+<div
+     data-x="1"
+     data-y="-1"
+     data-z="0"
+     data-value="8"
+>8</div>
+<div
+     data-x="1"
+     data-y="-1"
+     data-z="0"
+     data-value="0"
+></div>
+```
 
+Do not forget to add `gate-status` attribute. [Read more](#game-status)
+
+Your game should recognize hash in the URL (to run a correct game level for tests):
 - `/#test2` - where your application will start the game with radius 2
-- `/#test3` - same with radius 3
-- `/#test4` - same with radius 4
+- `/#test3` - with radius 3
+- `/#test4` - with radius 4
 
-Your game should send POST messages to rng-server on address
-localhost:13337/2(/3, /4). When you test your game with our tests, you should
-turn off the rng-server because tests are launching test servers for test
-purposes.
+Example:
+- http://hex2048.surge.sh/ - a game link
+- http://hex2048.surge.sh/#test2 - the link that automatically starts a game with radius 2
+- http://hex2048.surge.sh/#test3 - the link that automatically starts a game with radius 3
+
+**Do not forget to refer to our [example](http://hex2048.surge.sh/).**
+
+### Run tests locally
+
+
+To run tests locally you should clone the repository, install dependencies and run tests:
+
+```
+git clone https://gitlab.evolutiongaming.com/asamofalov/typescript-bootcamp.git
+cd typescript-bootcamp/assigment/hex2048
+npm install
+npm run test-game
+```
+
+By default, the server connects to `http://localhost:8080` but you can change this behavior by passing `url` parameter. Example:
+```
+npm run test-game -- --url=http://localhost:3000
+```
+or
+```
+npm run test-game -- --url=http://hex2048.surge.sh
+```
 
 ## Grading Notes
 
 For extra credits, you should the following (one or more):
 
-- Support radius 3 and even 3 and 4
-- Using tests
-- Clear solution
+- Support radiuses more than 2 (at least 3, 4 and even more)
+- Cover your code base with unit tests (with a common sense of course)
+- Use animations
+- Use such technologies as React, TypeScript
 
-## Submission
+## Task submission
 
 Please publish the solution in a private [GitHub](https://github.com/)
 repository and give user [@evo-home-task](https://github.com/evo-home-task)

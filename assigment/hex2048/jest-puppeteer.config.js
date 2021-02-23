@@ -4,7 +4,4 @@ module.exports = {
   },
   browsers: "chromium",
   browserContext: "default",
-  customTestSettings: {
-    "url": "http://localhost:8080"
-  }
 }
