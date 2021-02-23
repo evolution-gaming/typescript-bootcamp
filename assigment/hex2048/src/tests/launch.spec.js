@@ -1,15 +1,17 @@
 require("expect-puppeteer")
+const path = require("path")
 
 const { getFieldPoints } = require("../fieldUtils")
 const { Server } = require("../rngServer")
 const { readDOMField, getDataStatus } = require("./utils")
-const { customTestSettings: settings } = require("../../jest-puppeteer.config")
 
 let server
 let radius
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-const url = `${settings.url}/#test`
+const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0]
+const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/"
+const url = path.join(baseUrl, '#test')
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
