@@ -18,9 +18,9 @@ Nice to have:
 - Several game levels (at least 3 and 4) ([example](http://hex2048.surge.sh/)).
 
 More info:
+- **Useful article about hexagons: [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/)**.
 - The visual game appearance and technologies to implement the task are up to you and are restricted only your imagination.
 - Animations are appreciated but not required.
-- Useful article about hexagons: [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/).
 
 ## Rules
 
@@ -52,7 +52,7 @@ taking into account appropriate hexagonal direction.
 |        2 4 2 4 | 2 4 2 4 |
 |        2 2 4 4 |     4 8 |
 
-After each shift, you need to place new numbers received from the [server](///).
+After each shift, you need to place new numbers received from the [server](#rng-server).
 
 ### Game status
 
@@ -67,7 +67,7 @@ Game status should be present somewhere in your game DOM element (any one DOM el
 Example:
 
 ```html
-<div data-status="playing">My Hexagonal 2048 game</div>
+<div>Game Status: <span data-status="playing">playing</span></div>
 ```
 
 ## RNG Server
@@ -193,7 +193,7 @@ Example:
 - http://hex2048.surge.sh/#test2 - the link that automatically starts a game with radius 2
 - http://hex2048.surge.sh/#test3 - the link that automatically starts a game with radius 3
 
-**Do not forget to refer to our [example](http://hex2048.surge.sh/).**
+**Do not forget to refer to our [example](http://hex2048.surge.sh/) to check how elements should be marked in DOM.**
 
 ### Run tests locally
 
@@ -222,8 +222,7 @@ For extra credits, you should the following (one or more):
 
 - Support radiuses more than 2 (at least 3, 4 and even more)
 - Cover your code base with unit tests (with a common sense of course)
-- Use animations
-- Use such technologies as React, TypeScript
+- Implement animations
 
 ## Task submission
 
