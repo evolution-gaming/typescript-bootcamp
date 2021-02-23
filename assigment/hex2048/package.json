@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "rng-server": "node src/index.js",
-    "test": "jest --config jest.e2e.config.js"
+    "test-game": "jest --runInBand --config jest.e2e.config.js"
   },
   "devDependencies": {
     "jest": "^26.6.3",
-    "jest-playwright-preset": "^1.4.6",
-    "playwright-chromium": "^1.8.1"
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^7.1.0"
   }
 }

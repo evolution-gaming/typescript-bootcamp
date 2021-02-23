@@ -1,40 +1,36 @@
-const { chromium } = require("playwright-chromium")
+require("expect-puppeteer")
+
 const { getFieldPoints } = require("../fieldUtils")
 const { Server } = require("../rngServer")
-const { launchOptions } = require("../../jest-playwright.config")
-const {
-  dom: { readDOMField },
-} = require("./utils")
+const { readDOMField } = require("./utils")
+const { customTestSettings: settings } = require("../../jest-puppeteer.config")
 
-let browser
-let page
 let server
 let radius
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+const url = `http://${settings.domain}:${settings.port}/#test`
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
     server = new Server(true)
-    browser = await chromium.launch(launchOptions)
-    page = await browser.newPage()
     await server.start()
   })
 
   afterAll(async () => {
-    await browser.close()
     await server.end()
   })
 
   describe("radius 2", () => {
     radius = 2
+
     it("should render correct field with data-x, data-y, data-z, data-value with 0", async () => {
       const handler = jest.fn(() => [])
       const expected = getFieldPoints(radius).map(c => ({ ...c, value: 0 }))
 
       server.changeHandler(handler)
 
-      await page.goto(`localhost:8080/#test${radius}`)
+      await page.goto(url + radius)
       await delay(300)
 
       const field = await readDOMField(page, radius)
@@ -47,7 +43,7 @@ describe("Hex game launch", () => {
       const handler = jest.fn(() => cells)
       server.changeHandler(handler)
 
-      await page.goto(`localhost:8080/#test${radius}`)
+      await page.goto(url + radius)
       await delay(300)
 
       await expect(handler).toBeCalled()
@@ -66,7 +62,7 @@ describe("Hex game launch", () => {
 
         server.changeHandler((_, field) => (field.length === 0 ? cells : []))
 
-        await page.goto(`localhost:8080/#test${radius}`)
+        await page.goto(url + radius)
         await delay(300)
         await page.keyboard.press(keyCode)
         await delay(300)
@@ -106,7 +102,7 @@ describe("Hex game launch", () => {
       ])("%s", async (_message, keyCode, startPosition, expected) => {
         server.changeHandler((_, field) => (field.length === 0 ? startPosition : []))
 
-        await page.goto(`localhost:8080/#test${radius}`)
+        await page.goto(url + radius)
         await delay(300)
         await page.keyboard.press(keyCode)
         await delay(300)
@@ -123,14 +119,15 @@ describe("Hex game launch", () => {
         const handler = jest.fn(() => cells)
         server.changeHandler(handler)
 
-        await page.goto(`localhost:8080/#test${radius}`)
+        await page.goto(url + radius)
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
-        const status = await statusElement.getAttribute("data-status")
+        const status = await statusElement.evaluate(e => e.getAttribute("data-status"))
 
         expect(status).toBe("playing")
       })
+
       it('should show status "game-over" if game is over', async () => {
         const cells = [
           { x: -1, y: 1, z: 0, value: 64 },
@@ -144,11 +141,11 @@ describe("Hex game launch", () => {
         const handler = jest.fn(() => cells)
         server.changeHandler(handler)
 
-        await page.goto(`localhost:8080/#test${radius}`)
+        await page.goto(url + radius)
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
-        const status = await statusElement.getAttribute("data-status")
+        const status = await statusElement.evaluate(e => e.getAttribute("data-status"))
 
         expect(status).toBe("game-over")
       })
