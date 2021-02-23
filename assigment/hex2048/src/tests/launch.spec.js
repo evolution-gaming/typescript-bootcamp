@@ -8,10 +8,10 @@ const { readDOMField, getDataStatus } = require("./utils")
 let server
 let radius
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0];
-const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/";
-const url = path.join(baseUrl, '#test');
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0]
+const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/"
+const url = path.join(baseUrl, '#test')
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
