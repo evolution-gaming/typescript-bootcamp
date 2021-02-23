@@ -147,6 +147,7 @@ describe("Hex game launch", () => {
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
+        await page.keyboard.press("KeyA")
         const status = await getDataStatus(statusElement)
 
         expect(status).toBe("game-over")

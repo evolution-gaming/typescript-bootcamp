@@ -52,7 +52,7 @@ taking into account appropriate hexagonal direction.
 |        2 4 2 4 | 2 4 2 4 |
 |        2 2 4 4 |     4 8 |
 
-![Shifting](./assets/shifting.jpg)
+![Shifting](./assets/shifting.svg)
 
 After each shift, you need to place new numbers received from the [server](#rng-server).
 
@@ -96,9 +96,9 @@ The server responds with array of the [cube coordinates](https://www.redblobgame
 that you need to add into your field. The servers sends an empty array in case of no more positions to add a new numbers.
 `x`, `y`, `z` are positions for new numbers. `value` is a number to add at that position.
 
-![cube coordinates system](./assets/cube-coordinates.jpg)
+![cube coordinates system](./assets/cube-coordinates.svg)
 
-The server expects you to send the radius (game level) in the URL pathname (e.g., `/2` for 2, `/3` or 3, etc.).
+The server expects you to send the radius (game level) in the URL pathname (e.g., `/2` for 2, `/3` for 3, etc.).
 For example, correct server URL for game radius 2 is `http://51.15.207.127:13337/2`.
 
 Server URL: `51.15.207.127` or `be348fb6-960c-4f9a-9bdc-f38a83f20f18.pub.instances.scw.cloud`.
