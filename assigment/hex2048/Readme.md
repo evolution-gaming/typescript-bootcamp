@@ -52,6 +52,8 @@ taking into account appropriate hexagonal direction.
 |        2 4 2 4 | 2 4 2 4 |
 |        2 2 4 4 |     4 8 |
 
+![Shifting](./assets/shifting.jpg)
+
 After each shift, you need to place new numbers received from the [server](#rng-server).
 
 ### Game status
@@ -93,6 +95,8 @@ const cell = {
 The server responds with array of the [cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube) cells
 that you need to add into your field. The servers sends an empty array in case of no more positions to add a new numbers.
 `x`, `y`, `z` are positions for new numbers. `value` is a number to add at that position.
+
+![cube coordinates system](./assets/cube-coordinates.jpg)
 
 The server expects you to send the radius (game level) in the URL pathname (e.g., `/2` for 2, `/3` or 3, etc.).
 For example, correct server URL for game radius 2 is `http://51.15.207.127:13337/2`.
@@ -223,6 +227,7 @@ For extra credits, you should the following (one or more):
 - Support radiuses more than 2 (at least 3, 4 and even more)
 - Cover your code base with unit tests (with a common sense of course)
 - Implement animations
+- Put your realization on the Internet (free resources: [surge](http://surge.sh), [netlify](http://netlify.com), [vercel](https://vercel.com))
 
 ## Task submission
 
