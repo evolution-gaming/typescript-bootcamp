@@ -2,14 +2,14 @@ require("expect-puppeteer")
 
 const { getFieldPoints } = require("../fieldUtils")
 const { Server } = require("../rngServer")
-const { readDOMField } = require("./utils")
+const { readDOMField, getDataStatus } = require("./utils")
 const { customTestSettings: settings } = require("../../jest-puppeteer.config")
 
 let server
 let radius
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-const url = `http://${settings.domain}:${settings.port}/#test`
+const url = `${settings.url}/#test`
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
@@ -123,7 +123,7 @@ describe("Hex game launch", () => {
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
-        const status = await statusElement.evaluate(e => e.getAttribute("data-status"))
+        const status = await getDataStatus(statusElement)
 
         expect(status).toBe("playing")
       })
@@ -145,7 +145,7 @@ describe("Hex game launch", () => {
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
-        const status = await statusElement.evaluate(e => e.getAttribute("data-status"))
+        const status = await getDataStatus(statusElement)
 
         expect(status).toBe("game-over")
       })

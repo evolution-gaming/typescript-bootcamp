@@ -5,7 +5,6 @@ module.exports = {
   browsers: "chromium",
   browserContext: "default",
   customTestSettings: {
-    "domain": "localhost",
-    "port": "8080"
+    "url": "http://localhost:8080"
   }
 }
