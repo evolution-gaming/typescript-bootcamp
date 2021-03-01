@@ -149,7 +149,7 @@ Example with payload (filled cells):
 
 ```bash
 curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
-     -x POST http://51.15.207.127:13337/2
+     -X POST http://51.15.207.127:13337/2
 ```
 
 Server response:
@@ -178,7 +178,7 @@ Example:
 
 ```bash
 curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
-     -x POST http://localhost:13337/2
+     -X POST http://localhost:13337/2
 ```
 
 Server response:
