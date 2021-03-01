@@ -36,6 +36,23 @@ More info:
 
 ## Rules
 
+### Game initialization
+
+When the game starts on any game level, the first action from the user is not
+expected. That means when you choose the game level or the game is loaded, the
+game should be initialized on its own by default, and the user has to see the
+beginning numbers to start playing.
+
+The same rule is applicable when the game is loaded by the URL for
+[tests purposes](#how-will-your-solution-be-tested). When the game was loaded by
+the URL, the first request has to be done immediately after loading without any
+additional actions. And as a result, you will be able to see the beginning
+numbers to start playing.
+
+In other words, before starting playing the user should already see some
+beginning numbers received from the server without any actions. The first
+request to the server has to be done automatically after starting the game.
+
 ### Directions and Keys
 
 You have 6 keyboard keys (latin lower case letters) for 6 existing directions:
@@ -70,6 +87,13 @@ appropriate hexagonal direction.
 
 After each shift, you need to place new numbers received from the
 [server](#rng-server).
+
+In case if after starting shifting there are not movements done in the chosen
+direction and there are possible movements at least in one direction
+([game status](#game-status) is `playing`), nothing should be done until
+shifting is completed - do not need to add new numbers. The game has to wait for
+changes in any direction if they are possible and has not been done during
+shifting.
 
 ### Game status
 
@@ -253,9 +277,9 @@ For extra credits, you should the following (one or more):
 - Support radiuses more than 2 (at least 3, 4 and even more)
 - Cover your code base with unit tests (with a common sense of course)
 - Implement animations
-- Put your realization on the Internet (free resources:
-  [surge](http://surge.sh), [netlify](http://netlify.com),
-  [vercel](https://vercel.com))
+- Deploy your realization on the Internet (free resources:
+  [gh-pages](https://pages.github.com/), [surge](http://surge.sh),
+  [netlify](http://netlify.com), [vercel](https://vercel.com), etc.)
 
 ## Task submission
 

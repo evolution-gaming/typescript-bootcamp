@@ -40,7 +40,7 @@ describe("Hex game launch", () => {
       expect(field).toEqual(expect.arrayContaining(expected))
     })
 
-    it("should send correct request to rng server", async () => {
+    it("should send first request automatically after game loaded", async () => {
       const cells = [{ x: 0, y: 0, z: 0, value: 8 }]
       const handler = jest.fn(() => cells)
       server.changeHandler(handler)
@@ -48,7 +48,7 @@ describe("Hex game launch", () => {
       await page.goto(url + radius)
       await delay(300)
 
-      await expect(handler).toBeCalled()
+      expect(handler).toBeCalled()
     })
 
     describe("moves", () => {
@@ -74,6 +74,22 @@ describe("Hex game launch", () => {
         expect(field.filter(({ value }) => value === 128)).toEqual(
           expect.arrayContaining([{ ...expected, value: 128 }]),
         )
+      })
+
+      it("should not do anything if there are not movements done", async () => {
+        const cells = [{ x: 0, y: 1, z: -1, value: 2 }]
+        server.changeHandler(() => cells)
+        
+        await page.goto(url + radius)
+        await delay(300)
+
+        const handler = jest.fn()
+        server.changeHandler(handler)
+
+        await page.keyboard.press("KeyW")
+        await delay(300)
+
+        expect(handler).not.toHaveBeenCalled()
       })
     })
 
