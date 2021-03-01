@@ -164,7 +164,7 @@ To start the server locally you should clone the repository, install
 dependencies and start the server:
 
 ```
-git clone https://gitlab.evolutiongaming.com/asamofalov/typescript-bootcamp.git
+git clone git@github.com:evolution-gaming/typescript-bootcamp.git
 cd typescript-bootcamp/assigment/hex2048
 npm install
 npm run rng-server
