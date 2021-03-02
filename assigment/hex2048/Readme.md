@@ -201,7 +201,7 @@ Example:
 <div data-x="1" data-y="-1" data-z="0" data-value="0"></div>
 ```
 
-Do not forget to add `gate-status` attribute. [Read more](#game-status)
+Do not forget to add `data-status` attribute. [Read more](#game-status)
 
 Your game should recognize hash in the URL (to run a correct game level for
 tests):
@@ -253,7 +253,7 @@ For extra credits, you should the following (one or more):
 - Support radiuses more than 2 (at least 3, 4 and even more)
 - Cover your code base with unit tests (with a common sense of course)
 - Implement animations
-- Put your realization on the Internet (free resources:
+- Put your implementation on the Internet (free resources:
   [surge](http://surge.sh), [netlify](http://netlify.com),
   [vercel](https://vercel.com))
 
