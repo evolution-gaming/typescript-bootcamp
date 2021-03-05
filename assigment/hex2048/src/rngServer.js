@@ -67,7 +67,7 @@ class Server {
 
   #log = (...message) => {
     if (!this.#silent) {
-      console.log(this.#silent, ...message)
+      console.log(...message)
     }
   }
 
