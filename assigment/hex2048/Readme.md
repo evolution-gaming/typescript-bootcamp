@@ -26,7 +26,7 @@ Nice to have:
 
 - Several game levels (at least 3 and 4) ([example](http://hex2048.surge.sh/)).
 
-*We will be glad to answer any questions about the task in the [chat](https://gitter.im/evolution-ts-bootcamp/community)*
+**We will be glad to answer any questions about the task in the [chat](https://gitter.im/evolution-ts-bootcamp/community)**
 
 More info:
 
