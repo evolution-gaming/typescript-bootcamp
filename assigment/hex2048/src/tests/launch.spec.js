@@ -3,7 +3,7 @@ const path = require("path")
 
 const { getFieldPoints } = require("../fieldUtils")
 const { Server } = require("../rngServer")
-const { readDOMField, getDataStatus } = require("./utils")
+const { readDOMField, getDataStatus, setRngServerUrl } = require("./utils")
 
 let server
 let radius
@@ -43,10 +43,12 @@ describe("Hex game launch", () => {
     it("should render correct field with data-x, data-y, data-z, data-value with 0", async () => {
       const handler = jest.fn(() => [])
       const expected = getFieldPoints(radius).map(c => ({ ...c, value: 0 }))
-
       server.changeHandler(handler)
 
       await page.goto(url + radius)
+      await delay(300)
+
+      await setRngServerUrl(page)
       await delay(300)
 
       const field = await readDOMField(page, radius)
@@ -60,6 +62,8 @@ describe("Hex game launch", () => {
       server.changeHandler(handler)
 
       await page.goto(url + radius)
+      await delay(300)
+      await setRngServerUrl(page)
       await delay(300)
 
       expect(handler).toBeCalled()
@@ -80,6 +84,8 @@ describe("Hex game launch", () => {
 
         await page.goto(url + radius)
         await delay(300)
+        await setRngServerUrl(page)
+        await delay(300)
         await page.keyboard.press(keyCode)
         await delay(300)
 
@@ -94,6 +100,8 @@ describe("Hex game launch", () => {
         const cells = [{ x: 0, y: 1, z: -1, value: 2 }]
         server.changeHandler(() => cells)
         await page.goto(url + radius)
+        await delay(300)
+        await setRngServerUrl(page)
         await delay(300)
 
         const handler = jest.fn()
@@ -135,6 +143,9 @@ describe("Hex game launch", () => {
 
         await page.goto(url + radius)
         await delay(300)
+        await setRngServerUrl(page)
+        await delay(300)
+
         await page.keyboard.press(keyCode)
         await delay(300)
 
@@ -156,6 +167,8 @@ describe("Hex game launch", () => {
         server.changeHandler(serverHandler)
 
         await page.goto(url + radius)
+        await delay(300)
+        await setRngServerUrl(page)
         await delay(300)
 
         await page.keyboard.press("KeyW")
@@ -182,6 +195,9 @@ describe("Hex game launch", () => {
 
         await page.goto(url + radius)
         await delay(300)
+        await setRngServerUrl(page)
+        await delay(300)
+
 
         await page.keyboard.press("KeyD")
         await delay(300)
@@ -200,6 +216,8 @@ describe("Hex game launch", () => {
         server.changeHandler(handler)
 
         await page.goto(url + radius)
+        await delay(300)
+        await setRngServerUrl(page)
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
@@ -222,6 +240,8 @@ describe("Hex game launch", () => {
         server.changeHandler(handler)
 
         await page.goto(url + radius)
+        await delay(300)
+        await setRngServerUrl(page)
         await delay(300)
 
         const statusElement = await page.waitForSelector("[data-status]")
