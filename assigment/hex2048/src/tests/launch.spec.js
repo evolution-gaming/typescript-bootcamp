@@ -13,19 +13,7 @@ const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0]
 const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/"
 const url = path.join(baseUrl, '#test')
 
-const createSerialServerHandler = (answers) => {
-  let counter = 0
-  return () => {
-    if (counter < answers.length) {
-      const answer = answers[counter]
-      counter += 1
-      return answer
-    } else {
-      return []
-    }
-  }
-}
-
+const createSerialServerHandler = (answers) => () => answers.length > 0 ? answers.shift() : []
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
@@ -186,11 +174,10 @@ describe("Hex game launch", () => {
 
       it("should process serial of moves and numbers", async () => {
         const serverHandler = createSerialServerHandler([
-          [{ x: 0, y: 1, z: -1, value: 2 }, { x: 0, y: 1, z: -1, value: 2 }, { x: 0, y: 0, z: 0, value: 2 }],
-          [{ x: -1, y: 0, z: 1, value: 4 }, { x: 0, y: 0, z: 0, value: 4 }],
+          [{ x: 0, y: 1, z: -1, value: 2 }, { x: 0, y: 0, z: 0, value: 2 }],
           [{ x: -1, y: 0, z: 1, value: 4 }, { x: 0, y: 0, z: 0, value: 4 }],
         ])
-        const expected = [{value: 4, x: 0, y: 0, z: 0}, {value: 2, x: 0, y: -1, z: 1}, {value: 8, x: -1, y: 0, z: 1}]
+        const expected = [{value: 2, x: 0, y: 0, z: 0}, {value: 2, x: 0, y: -1, z: 1}, {value: 8, x: -1, y: 0, z: 1}]
         server.changeHandler(serverHandler)
 
         await page.goto(url + radius)
