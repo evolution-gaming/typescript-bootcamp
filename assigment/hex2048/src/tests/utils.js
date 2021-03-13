@@ -3,11 +3,15 @@ const { getFieldPoints } = require("../fieldUtils")
 const getDataValue = e => e.evaluate(e => e.getAttribute("data-value"))
 const getDataStatus = e => e.evaluate(e => e.getAttribute("data-status"))
 const setRngServerUrl = async page => {
-  const value = await page.evaluate(() => {
-    return document.getElementById("localhost").value
+  const { value, selected } = await page.evaluate(() => {
+    const { value, selected } = document.getElementById("localhost")
+    return { value, selected }
   });
-  await page.waitForSelector("#url-server")
-  await page.select("#url-server", value)
+
+  if (!selected) {
+    await page.waitForSelector("#url-server")
+    await page.select("#url-server", value)
+  }
 }
 
 async function readDOMField(page, radius) {
