@@ -17,6 +17,9 @@ What is required:
   [rules](#directions-and-keys).
 - Have to change field data by clicking keyboard keys according to the
   [rules](#shifting-rules).
+- Deploy your implementation on the Internet (free resources:
+  [gh-pages](https://pages.github.com/), [surge](http://surge.sh),
+  [netlify](http://netlify.com), [vercel](https://vercel.com))
 - Have to work on the latest Google Chrome on the desktop (all other devices and
   browsers are up to you).
 - All other ideas, game features and controls, supported devices and so on are
@@ -26,15 +29,19 @@ Nice to have:
 
 - Several game levels (at least 3 and 4) ([example](http://hex2048.surge.sh/)).
 
-**We will be glad to answer any questions about the task in the [chat](https://gitter.im/evolution-ts-bootcamp/community)**
-
 More info:
 
+- **Please join the [chat](https://gitter.im/evolution-ts-bootcamp/community) and
+  do not be shy to ask any questions what you have. We are glad to do our best
+  to clarify unclear things, add more details regarding the home task or tests
+  and help you.**
 - **Useful article about hexagons:
-  [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/)**.
+  [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/).**
 - The visual game appearance and technologies to implement the task are up to
   you and are restricted only your imagination.
 - Animations are appreciated but not required.
+
+**Please follow the news in the [chat](https://gitter.im/evolution-ts-bootcamp/community)**
 
 ## Rules
 
@@ -147,18 +154,23 @@ new numbers. `value` is a number to add at that position.
 
 The server expects you to send the radius (game level) in the URL pathname
 (e.g., `/2` for 2, `/3` for 3, etc.). For example, correct server URL for game
-radius 2 is `http://51.15.207.127:13337/2`.
+radius 2 is `//68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud/2`.
 
-Server URL: `51.15.207.127` or
-`be348fb6-960c-4f9a-9bdc-f38a83f20f18.pub.instances.scw.cloud`.
-
-Server port: `13337`.
+Server URL: `68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud`
+(works with both HTTP and HTTPS).
 
 Example (initial game):
 
 ```bash
 curl -d '[]' \
-     -X POST http://51.15.207.127:13337/2
+     -X POST http://68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud/2
+```
+
+Or
+
+```bash
+curl -d '[]' \
+     -X POST https://68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud/2
 ```
 
 Server response:
@@ -175,7 +187,14 @@ Example with payload (filled cells):
 
 ```bash
 curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
-     -X POST http://51.15.207.127:13337/2
+     -X POST http://68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud/2
+```
+
+Or
+
+```bash
+curl -d '[{"x": 0, "y": 0, "z": 0, "value": 2}]' \
+     -X POST https://68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud/2
 ```
 
 Server response:
@@ -186,8 +205,9 @@ Server response:
 
 ### Receiving data from the local server
 
-To start the server locally you should clone the repository, install
-dependencies and start the server:
+To start the server locally you should clone **this repository**, go to the
+`typescript-bootcamp/assigment/hex2048` folder, install dependencies and run
+tests. Steps to help:
 
 ```
 git clone https://github.com/evolution-gaming/typescript-bootcamp.git
@@ -215,6 +235,8 @@ Server response:
 
 ## How will your solution be tested?
 
+### Data attributes for hexagons
+
 Every cell from the field should have appropriate data attributes: `data-x`,
 `data-y`, `data-z` and `data-value`. Where `data-x`, `data-y`, `data-z` are
 respective representations of cube coordinates `x`, `y`, `z`. And `data-value`
@@ -227,7 +249,42 @@ Example:
 <div data-x="1" data-y="-1" data-z="0" data-value="0"></div>
 ```
 
+The element in the DOM with unique combination of `data-x`, `data-y`, `data-z`
+has to be a single one and has to have appropriate `data-value`. That means you
+should not have more than one element in the DOM with same values of `data-x`,
+`data-y`, `data-z`. Otherwise, tests cannot handle this properly.
+
+### Data attribute to recognize game status
+
 Do not forget to add `data-status` attribute. [Read more](#game-status)
+
+### Select the server URL
+
+The game has to have a selector to choose a server URL. This is necessary in
+terms of game testing.
+
+Please, add appropriate HTML code in your game and handle selection correctly.
+For example:
+
+```html
+<select id="url-server">
+  <option id="remote" value="//68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud">Remote server</option>
+  <option id="localhost" value="http://localhost:13337/">Local server</option>
+</select>
+```
+
+Pay attention to appropriate ids:
+- `id="url-server"` for `select`
+- `id="localhost"` for `option` to receive data from localhost
+- `id="remote"` for `option` to receive data from our deployed server
+
+The elements with these ids should be unique across all the DOM. Otherwise,
+tests cannot handle this properly.
+
+After switching between the options, the game has to receive data from the
+chosen URL starting the game from scratch.
+
+### Hash in the URL
 
 Your game should recognize hash in the URL (to run a correct game level for
 tests):
@@ -249,8 +306,9 @@ elements should be marked in DOM.**
 
 ### Run tests locally
 
-To run tests locally you should clone the repository, install dependencies and
-run tests:
+To run tests locally you should clone **this repository**, go to the
+`typescript-bootcamp/assigment/hex2048` folder, install dependencies and run
+tests. Steps to help:
 
 ```
 git clone https://github.com/evolution-gaming/typescript-bootcamp.git
@@ -259,14 +317,19 @@ npm install
 npm run test-game
 ```
 
-By default, the server connects to `http://localhost:8080` but you can change
-this behavior by passing `url` parameter. Example:
+Local tests expect that your game receives the data by the URL
+`http://localhost:13337/` in order to mock responses with test data. Please be
+careful when you run tests and do not forgot to change the URL. Tests do it
+automatically according to [these rules](#select-the-server-url).
+
+By default, the server connects to `http://localhost:8080` in order to open the
+game but you can change this behavior by passing `url` parameter. Example:
 
 ```
 npm run test-game -- --url=http://localhost:3000
 ```
 
-or
+Please run tests for your deployed game and check that all work properly. 
 
 ```
 npm run test-game -- --url=http://hex2048.surge.sh
@@ -279,12 +342,17 @@ For extra credits, you should the following (one or more):
 - Support radiuses more than 2 (at least 3, 4 and even more)
 - Cover your code base with unit tests (with a common sense of course)
 - Implement animations
-- Put your implementation on the Internet (free resources:
-  [surge](http://surge.sh), [netlify](http://netlify.com),
-  [vercel](https://vercel.com))
 
 ## Task submission
 
 Please publish the solution in a private [GitHub](https://github.com/)
 repository and give user [@evo-home-task](https://github.com/evo-home-task)
 access to the repository.
+
+Share the link with your deployed version via email or better add it into README
+in your github repository with your solution.
+
+## Feedback
+
+**You can address any questions by email or ask in the
+[chat](https://gitter.im/evolution-ts-bootcamp/community)**

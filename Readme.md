@@ -1,6 +1,6 @@
-# Typesript Bootcamp
+# TypeSript Bootcamp
 
-This repository contains information on the [Evolution Gaming](https://eng.evolutiongaming.com/) Typescript Bootcamp.
+This repository contains information on the [Evolution Gaming](https://eng.evolutiongaming.com/) TypeScript Bootcamp.
 
 ## Schedule
 
@@ -20,7 +20,7 @@ Alternatives that are also expected to work:
 
 ### Prepare the project
 
-- Check out the [Typescript Bootcamp](https://github.com/evolution-gaming/typescript-bootcamp) project
+- Check out the [TypeScript Bootcamp](https://github.com/evolution-gaming/typescript-bootcamp) project
 - Run tests from the command line using `yarn test`
 
 The tests will fail (for now), this is normal and expected.
@@ -28,7 +28,7 @@ The tests will fail (for now), this is normal and expected.
 ### Troubleshooting
 
 In case of issues:
-- Ask in the Bootcamp chat
+- Ask in the **[TypeScript Bootcamp chat](https://gitter.im/evolution-ts-bootcamp/community)**
 
 ### Non-Js
 
