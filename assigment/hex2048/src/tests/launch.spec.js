@@ -12,8 +12,21 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0]
 const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/"
 const url = path.join(baseUrl, '#test')
-
+const DELAY_BETWEEN_ACTIONS = urlArg ? 500 : 300
 const createSerialServerHandler = (answers) => () => answers.length > 0 ? answers.shift() : []
+
+const setupPage = async (page, url) => {
+    await page.goto(url)
+    await setRngServerUrl(page)
+    await delay(DELAY_BETWEEN_ACTIONS)
+}
+
+const pressDirectionKeys = async (page, keyboardDirections) => {
+    for (let direction of keyboardDirections) {
+        await page.keyboard.press(direction)
+        await delay(DELAY_BETWEEN_ACTIONS)
+    }
+}
 
 describe("Hex game launch", () => {
   beforeAll(async () => {
@@ -33,15 +46,9 @@ describe("Hex game launch", () => {
       const expected = getFieldPoints(radius).map(c => ({ ...c, value: 0 }))
       server.changeHandler(handler)
 
-      await page.goto(url + radius)
-      await delay(300)
+      await setupPage(page, url + radius)
 
-      await setRngServerUrl(page)
-      await delay(300)
-
-      const field = await readDOMField(page, radius)
-
-      expect(field).toEqual(expect.arrayContaining(expected))
+      expect(await readDOMField(page, radius)).toEqual(expect.arrayContaining(expected))
     })
 
     it("should send first request automatically after game loaded", async () => {
@@ -49,10 +56,7 @@ describe("Hex game launch", () => {
       const handler = jest.fn(() => cells)
       server.changeHandler(handler)
 
-      await page.goto(url + radius)
-      await delay(300)
-      await setRngServerUrl(page)
-      await delay(300)
+      await setupPage(page, url + radius)
 
       expect(handler).toBeCalled()
     })
@@ -67,15 +71,10 @@ describe("Hex game launch", () => {
         ["south-east", "KeyD", { x: 1, y: -1, z: 0 }],
       ])("should move to %s after press %s", async (_, keyCode, expected) => {
         const cells = [{ x: 0, y: 0, z: 0, value: 128 }]
-
         server.changeHandler((_, field) => (field.length === 0 ? cells : []))
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
+        await setupPage(page, url + radius)
         await page.keyboard.press(keyCode)
-        await delay(300)
 
         const field = await readDOMField(page, radius)
 
@@ -87,16 +86,11 @@ describe("Hex game launch", () => {
       it("should not do anything if there are not movements done", async () => {
         const cells = [{ x: 0, y: 1, z: -1, value: 2 }]
         server.changeHandler(() => cells)
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
+        await setupPage(page, url + radius)
 
         const handler = jest.fn()
         server.changeHandler(handler)
-
-        await page.keyboard.press("KeyW")
-        await delay(300)
+        await pressDirectionKeys(page, ["KeyW"])
 
         expect(handler).not.toHaveBeenCalled()
       })
@@ -129,16 +123,10 @@ describe("Hex game launch", () => {
       ])("%s", async (_message, keyCode, startPosition, expected) => {
         server.changeHandler((_, field) => (field.length === 0 ? startPosition : []))
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
-
-        await page.keyboard.press(keyCode)
-        await delay(300)
+        await setupPage(page, url + radius)
+        await pressDirectionKeys(page, [keyCode])
 
         const field = await readDOMField(page, radius)
-
         expect(field.filter(({ value }) => value > 0)).toEqual(expect.arrayContaining(expected))
       })
     })
@@ -154,23 +142,12 @@ describe("Hex game launch", () => {
         const expected = [{ x: 0, y: -1, z: 1, value: 32 }]
         server.changeHandler(serverHandler)
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
-
-        await page.keyboard.press("KeyW")
-        await delay(300)
-        await page.keyboard.press("KeyS")
-        await delay(300)
-        await page.keyboard.press("KeyW")
-        await delay(300)
-        await page.keyboard.press("KeyS")
-        await delay(300)
+        await setupPage(page, url + radius)
+        await pressDirectionKeys(page, ["KeyW", "KeyS", "KeyW", "KeyS"])
 
         const field = await readDOMField(page, radius)
         expect(field.filter(({ value }) => value > 0)).toEqual(expect.arrayContaining(expected))
-      })
+      }, 10000)
 
       it("should process serial of moves and numbers", async () => {
         const serverHandler = createSerialServerHandler([
@@ -180,20 +157,12 @@ describe("Hex game launch", () => {
         const expected = [{value: 2, x: 0, y: 0, z: 0}, {value: 2, x: 0, y: -1, z: 1}, {value: 8, x: -1, y: 0, z: 1}]
         server.changeHandler(serverHandler)
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
-
-
-        await page.keyboard.press("KeyD")
-        await delay(300)
-        await page.keyboard.press("KeyA")
-        await delay(300)
+        await setupPage(page, url + radius)
+        await pressDirectionKeys(page, ["KeyD", "KeyA"])
 
         const field = await readDOMField(page, radius)
         expect(field.filter(({ value }) => value > 0)).toEqual(expect.arrayContaining(expected))
-      })
+      }, 10000)
     })
 
     describe("status", () => {
@@ -202,15 +171,10 @@ describe("Hex game launch", () => {
         const handler = jest.fn(() => cells)
         server.changeHandler(handler)
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
+        await setupPage(page, url + radius)
 
         const statusElement = await page.waitForSelector("[data-status]")
-        const status = await getDataStatus(statusElement)
-
-        expect(status).toBe("playing")
+        expect(await getDataStatus(statusElement)).toBe("playing")
       })
 
       it('should show status "game-over" if game is over', async () => {
@@ -226,16 +190,11 @@ describe("Hex game launch", () => {
         const handler = jest.fn(() => cells)
         server.changeHandler(handler)
 
-        await page.goto(url + radius)
-        await delay(300)
-        await setRngServerUrl(page)
-        await delay(300)
+        await setupPage(page, url + radius)
+        await pressDirectionKeys(page, ["KeyA"])
 
         const statusElement = await page.waitForSelector("[data-status]")
-        await page.keyboard.press("KeyA")
-        const status = await getDataStatus(statusElement)
-
-        expect(status).toBe("game-over")
+        expect(await getDataStatus(statusElement)).toBe("game-over")
       })
     })
   })
