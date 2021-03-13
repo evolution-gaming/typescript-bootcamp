@@ -63,18 +63,18 @@ describe("Hex game launch", () => {
 
     describe("moves", () => {
       it.each([
-        ["north", "KeyW", { x: 0, y: 1, z: -1 }],
-        ["north-west", "KeyQ", { x: -1, y: 1, z: 0 }],
-        ["north-east", "KeyE", { x: 1, y: 0, z: -1 }],
-        ["south", "KeyS", { x: 0, y: -1, z: 1 }],
-        ["south-west", "KeyA", { x: -1, y: 0, z: 1 }],
-        ["south-east", "KeyD", { x: 1, y: -1, z: 0 }],
+        ["north", "W", { x: 0, y: 1, z: -1 }],
+        ["north-west", "Q", { x: -1, y: 1, z: 0 }],
+        ["north-east", "E", { x: 1, y: 0, z: -1 }],
+        ["south", "S", { x: 0, y: -1, z: 1 }],
+        ["south-west", "A", { x: -1, y: 0, z: 1 }],
+        ["south-east", "D", { x: 1, y: -1, z: 0 }],
       ])("should move to %s after press %s", async (_, keyCode, expected) => {
         const cells = [{ x: 0, y: 0, z: 0, value: 128 }]
         server.changeHandler((_, field) => (field.length === 0 ? cells : []))
 
         await setupPage(page, url + radius)
-        await page.keyboard.press(keyCode)
+        await pressDirectionKeys(page, keyCode)
 
         const field = await readDOMField(page, radius)
 
