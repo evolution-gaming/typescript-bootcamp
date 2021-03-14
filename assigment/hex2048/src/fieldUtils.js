@@ -9,6 +9,7 @@ const getFieldPoints = radius => {
   )
   return points
 }
+
 const pickRandomN = (array, n) =>
   array
     .map(a => ({ order: rng(), value: a }))

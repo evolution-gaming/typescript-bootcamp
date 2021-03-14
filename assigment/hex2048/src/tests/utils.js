@@ -6,7 +6,7 @@ const setRngServerUrl = async page => {
   const { value, selected } = await page.evaluate(() => {
     const { value, selected } = document.getElementById("localhost")
     return { value, selected }
-  });
+  })
 
   if (!selected) {
     await page.waitForSelector("#url-server")

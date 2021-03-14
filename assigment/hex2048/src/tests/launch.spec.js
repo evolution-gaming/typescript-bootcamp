@@ -9,11 +9,11 @@ let server
 let radius
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-const urlArg = process.argv.filter((x) => x.startsWith("--url="))[0]
+const urlArg = process.argv.filter(x => x.startsWith("--url="))[0]
 const baseUrl = (urlArg && urlArg.replace("--url=", "")) || "http://localhost:8080/"
-const url = path.join(baseUrl, '#test')
+const url = path.join(baseUrl, "#test")
 const DELAY_BETWEEN_ACTIONS = urlArg ? 500 : 300
-const createSerialServerHandler = (answers) => () => answers.length > 0 ? answers.shift() : []
+const createSerialServerHandler = answers => () => (answers.length > 0 ? answers.shift() : [])
 
 const setupPage = async (page, url) => {
   await page.goto(url)
@@ -134,7 +134,10 @@ describe("Hex game launch", () => {
     describe("few moves", () => {
       it("should process serial of moves", async () => {
         const serverHandler = createSerialServerHandler([
-          [{ x: 0, y: 0, z: 0, value: 2 }, { x: 0, y: 1, z: -1, value: 2 }],
+          [
+            { x: 0, y: 0, z: 0, value: 2 },
+            { x: 0, y: 1, z: -1, value: 2 },
+          ],
           [{ x: 0, y: 0, z: 0, value: 4 }],
           [{ x: 0, y: 0, z: 0, value: 8 }],
           [{ x: 0, y: 0, z: 0, value: 16 }],
@@ -151,10 +154,20 @@ describe("Hex game launch", () => {
 
       it("should process serial of moves and numbers", async () => {
         const serverHandler = createSerialServerHandler([
-          [{ x: 0, y: 1, z: -1, value: 2 }, { x: 0, y: 0, z: 0, value: 2 }],
-          [{ x: -1, y: 0, z: 1, value: 4 }, { x: 0, y: 0, z: 0, value: 4 }],
+          [
+            { x: 0, y: 1, z: -1, value: 2 },
+            { x: 0, y: 0, z: 0, value: 2 },
+          ],
+          [
+            { x: -1, y: 0, z: 1, value: 4 },
+            { x: 0, y: 0, z: 0, value: 4 },
+          ],
         ])
-        const expected = [{value: 2, x: 0, y: 0, z: 0}, {value: 2, x: 0, y: -1, z: 1}, {value: 8, x: -1, y: 0, z: 1}]
+        const expected = [
+          { value: 2, x: 0, y: 0, z: 0 },
+          { value: 2, x: 0, y: -1, z: 1 },
+          { value: 8, x: -1, y: 0, z: 1 },
+        ]
         server.changeHandler(serverHandler)
 
         await setupPage(page, url + radius)
@@ -201,70 +214,101 @@ describe("Hex game launch", () => {
 
   describe("Emulate game", () => {
     it("long game #1", async () => {
-        const serverHandler = createSerialServerHandler([
-          [{"x":1,"y":-1,"z":0,"value":2},{"x":-1,"y":1,"z":0,"value":2},{"x":0,"y":-1,"z":1,"value":2}],
-          [{"x":-1,"y":0,"z":1,"value":2}],
-          [{"x":-1,"y":1,"z":0,"value":2}],
-          [{"x":0,"y":0,"z":0,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":4}],
-          [{"x":-1,"y":1,"z":0,"value":2},{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":0,"y":1,"z":-1,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":4},{"x":1,"y":0,"z":-1,"value":4}],
-          [{"x":0,"y":0,"z":0,"value":4}],
-          [{"x":-1,"y":1,"z":0,"value":4},{"x":0,"y":1,"z":-1,"value":4}],
-          [{"x":1,"y":-1,"z":0,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":2}],
-          [{"x":0,"y":0,"z":0,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":4}],
-          [{"x":-1,"y":1,"z":0,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":4},{"x":1,"y":0,"z":-1,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":2},{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":2},{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":4}],
-          [{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":2},{"x":0,"y":-1,"z":1,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":2}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":4}],
-          [{"x":0,"y":-1,"z":1,"value":4}],
-          [{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":4}],
-          [{"x":1,"y":-1,"z":0,"value":2}],
-          [{"x":0,"y":-1,"z":1,"value":2}],
-          [{"x":1,"y":-1,"z":0,"value":2},{"x":1,"y":0,"z":-1,"value":2}],
-          [{"x":1,"y":0,"z":-1,"value":4}],
-          [{"x":-1,"y":0,"z":1,"value":4}],
-          [{"x":0,"y":-1,"z":1,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":4},{"x":-1,"y":1,"z":0,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":4}],
-          [{"x":0,"y":1,"z":-1,"value":2}]
-        ])
-        const expected = [
-          {"value": 4, "x": 1, "y": 0, "z": -1},
-          {"value": 2, "x": 1, "y": -1, "z": 0},
-          {"value": 2, "x": 0, "y": 1, "z": -1},
-          {"value": 16, "x": 0, "y": 0, "z": 0},
-          {"value": 8, "x": 0, "y": -1, "z": 1},
-          {"value": 8, "x": -1, "y": 1, "z": 0},
-          {"value": 128, "x": -1, "y": 0, "z": 1},
-        ]
-        server.changeHandler(serverHandler)
+      const serverHandler = createSerialServerHandler([
+        [
+          { x: 1, y: -1, z: 0, value: 2 },
+          { x: -1, y: 1, z: 0, value: 2 },
+          { x: 0, y: -1, z: 1, value: 2 },
+        ],
+        [{ x: -1, y: 0, z: 1, value: 2 }],
+        [{ x: -1, y: 1, z: 0, value: 2 }],
+        [{ x: 0, y: 0, z: 0, value: 4 }],
+        [{ x: 1, y: 0, z: -1, value: 4 }],
+        [
+          { x: -1, y: 1, z: 0, value: 2 },
+          { x: 1, y: 0, z: -1, value: 2 },
+        ],
+        [{ x: 0, y: 1, z: -1, value: 4 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [{ x: 1, y: -1, z: 0, value: 4 }],
+        [
+          { x: 0, y: 1, z: -1, value: 4 },
+          { x: 1, y: 0, z: -1, value: 4 },
+        ],
+        [{ x: 0, y: 0, z: 0, value: 4 }],
+        [
+          { x: -1, y: 1, z: 0, value: 4 },
+          { x: 0, y: 1, z: -1, value: 4 },
+        ],
+        [{ x: 1, y: -1, z: 0, value: 4 }],
+        [{ x: 0, y: 1, z: -1, value: 2 }],
+        [{ x: 0, y: 0, z: 0, value: 4 }],
+        [{ x: 1, y: 0, z: -1, value: 4 }],
+        [{ x: -1, y: 1, z: 0, value: 4 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [
+          { x: 1, y: -1, z: 0, value: 4 },
+          { x: 1, y: 0, z: -1, value: 4 },
+        ],
+        [{ x: 0, y: 1, z: -1, value: 2 }],
+        [{ x: 1, y: -1, z: 0, value: 2 }],
+        [{ x: 0, y: -1, z: 1, value: 4 }],
+        [
+          { x: 1, y: 0, z: -1, value: 2 },
+          { x: 1, y: -1, z: 0, value: 2 },
+        ],
+        [
+          { x: 0, y: -1, z: 1, value: 2 },
+          { x: 1, y: -1, z: 0, value: 2 },
+        ],
+        [{ x: 1, y: -1, z: 0, value: 4 }],
+        [{ x: 1, y: -1, z: 0, value: 2 }],
+        [{ x: 1, y: -1, z: 0, value: 2 }],
+        [{ x: 1, y: -1, z: 0, value: 2 }],
+        [
+          { x: 1, y: -1, z: 0, value: 2 },
+          { x: 0, y: -1, z: 1, value: 2 },
+        ],
+        [{ x: 0, y: -1, z: 1, value: 2 }],
+        [{ x: 0, y: -1, z: 1, value: 2 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [{ x: 0, y: -1, z: 1, value: 4 }],
+        [{ x: 0, y: -1, z: 1, value: 4 }],
+        [{ x: 1, y: 0, z: -1, value: 2 }],
+        [{ x: 0, y: -1, z: 1, value: 4 }],
+        [{ x: 1, y: -1, z: 0, value: 2 }],
+        [{ x: 0, y: -1, z: 1, value: 2 }],
+        [
+          { x: 1, y: -1, z: 0, value: 2 },
+          { x: 1, y: 0, z: -1, value: 2 },
+        ],
+        [{ x: 1, y: 0, z: -1, value: 4 }],
+        [{ x: -1, y: 0, z: 1, value: 4 }],
+        [{ x: 0, y: -1, z: 1, value: 4 }],
+        [
+          { x: 0, y: 1, z: -1, value: 4 },
+          { x: -1, y: 1, z: 0, value: 4 },
+        ],
+        [{ x: 0, y: 1, z: -1, value: 4 }],
+        [{ x: 0, y: 1, z: -1, value: 2 }],
+      ])
+      const expected = [
+        { value: 4, x: 1, y: 0, z: -1 },
+        { value: 2, x: 1, y: -1, z: 0 },
+        { value: 2, x: 0, y: 1, z: -1 },
+        { value: 16, x: 0, y: 0, z: 0 },
+        { value: 8, x: 0, y: -1, z: 1 },
+        { value: 8, x: -1, y: 1, z: 0 },
+        { value: 128, x: -1, y: 0, z: 1 },
+      ]
+      server.changeHandler(serverHandler)
 
-        await setupPage(page, url + radius)
-        await pressDirectionKeys(page, "DDADSASADDSASDQDAQAAAQWQWAAWAWWEAWEAWQWASWQDAD")
+      await setupPage(page, url + radius)
+      await pressDirectionKeys(page, "DDADSASADDSASDQDAQAAAQWQWAAWAWWEAWEAWQWASWQDAD")
 
-        expect(await readDOMField(page, radius)).toEqual(expect.arrayContaining(expected))
+      expect(await readDOMField(page, radius)).toEqual(expect.arrayContaining(expected))
     }, 30000)
   })
 })
