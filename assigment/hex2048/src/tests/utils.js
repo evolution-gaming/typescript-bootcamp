@@ -9,8 +9,10 @@ const setRngServerUrl = async page => {
   })
 
   if (!selected) {
-    await page.waitForSelector("#url-server")
-    await page.select("#url-server", value)
+    try {
+      await page.waitForSelector("#url-server")
+      await page.select("#url-server", value)
+    } catch (_e) {}
   }
 }
 
