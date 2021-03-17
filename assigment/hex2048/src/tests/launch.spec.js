@@ -120,6 +120,32 @@ describe("Hex game launch", () => {
             { x: 0, y: 0, z: 0, value: 2 },
           ],
         ],
+        [
+          "should sum up 3 cells correctly (2 2 4 -> 4 4)",
+          "W",
+          [
+            { x: 0, y: 1, z: -1, value: 4 },
+            { x: 0, y: 0, z: 0, value: 2 },
+            { x: 0, y: -1, z: 1, value: 2 },
+          ],
+          [
+            { x: 0, y: 1, z: -1, value: 4 },
+            { x: 0, y: 0, z: 0, value: 4 },
+          ],
+        ],
+        [
+          "should sum up 3 cells correctly (4 2 2 -> 4 4)",
+          "W",
+          [
+            { x: 0, y: 1, z: -1, value: 2 },
+            { x: 0, y: 0, z: 0, value: 2 },
+            { x: 0, y: -1, z: 1, value: 4 },
+          ],
+          [
+            { x: 0, y: 1, z: -1, value: 4 },
+            { x: 0, y: 0, z: 0, value: 4 },
+          ],
+        ],
       ])("%s", async (_message, keyCode, startPosition, expected) => {
         server.changeHandler((_, field) => (field.length === 0 ? startPosition : []))
 
