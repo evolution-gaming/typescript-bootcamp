@@ -61,7 +61,7 @@ class Server {
     const rngPoints = this.#messageHandler(radius, body)
 
     this.#log("RECEIVED:", `radius: ${radius}`, body)
-    this.#log("SENDED:", rngPoints)
+    this.#log("SENT:", rngPoints)
     this.#sendOK(res, rngPoints)
   }
 

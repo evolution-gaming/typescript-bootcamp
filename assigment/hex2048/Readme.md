@@ -146,9 +146,9 @@ const cell = {
 
 The server responds with array of the
 [cube coordinates](https://www.redblobgames.com/grids/hexagons/#coordinates-cube)
-cells that you need to add into your field. The servers sends an empty array in
-case of no more positions to add a new numbers. `x`, `y`, `z` are positions for
-new numbers. `value` is a number to add at that position.
+cells that you need to add into your field. One or several cells can be returned. 
+The servers sends an empty array in case of no more positions to add a new numbers. 
+`x`, `y`, `z` are positions for new numbers. `value` is a number to add at that position.
 
 ![cube coordinates system](./assets/cube-coordinates.svg)
 

@@ -1,4 +1,4 @@
-# TypeSript Bootcamp
+# TypeScript Bootcamp
 
 This repository contains information on the [Evolution Gaming](https://eng.evolutiongaming.com/) TypeScript Bootcamp.
 
