@@ -1,3 +1,5 @@
+**The detailed schedule is [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vToQH_m9w3mYu0rEsRa2VJMpABbJXTpjZs8yOe5smdaUFQlO6Xyhtr05JzXivcuo96Q3nYe9hTiWc7Z/pubhtml?gid=0&single=true).**
+
 The [2021 Q2-Q3 bootcamp](https://typescript-bootcamp.evolution.com/by) has the following tentative schedule:
 
 | 2021-* | Topics                                               | Responsible                                        | Materials |
