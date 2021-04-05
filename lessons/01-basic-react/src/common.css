@@ -1,0 +1,39 @@
+.app {
+  background-color: #282c34;
+  color: white;
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: grey;
+}
+
+.cube-left {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.cube-right {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.cube-up {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  top: 0;
+}
+
+.cube-down {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 0;
+}
