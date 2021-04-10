@@ -1,45 +1,46 @@
-# Bubble Sort Visualization
+# Getting Started with Create React App
 
-## Task description
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Your task is to develop a simple **Bubble Sort Visualization** app.
+## Available Scripts
 
-Please take a look our example: [Bubble Sort Visualization](https://evo-ts-bubble-sort.surge.sh/).
+In the project directory, you can run:
 
-What is required:
+### `yarn start`
 
-- Use [Create React App with TypeScript](https://create-react-app.dev/docs/adding-typescript/).
-- Use React for rendering (ONLY [React Class Components](https://reactjs.org/docs/react-component.html)
-  and [React Stateless Components](https://reactjs.org/docs/components-and-props.html)).
-- Use React lifecycle methods and React state.
-- Define types as much and clear as possible.
-- Implement bubble sort algorithm and visualize it.
-- Deploy your implementation on the Internet (free resources:
-  [gh-pages](https://pages.github.com/), [surge](http://surge.sh),
-  [netlify](http://netlify.com), [vercel](https://vercel.com)).
-- Have to work on the latest Google Chrome on the desktop (all other devices and
-  browsers are up to you).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Required app options:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Ability to generate array of random length with random values.
-- Ability to watch changes while sorting an array.
-- Ability to see the status of the app (sorting in progress, sorted or what you wish to add).
+### `yarn test`
 
-All other ideas are up to you and your imagination. For example:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Ability to go step by step manually.
-- Ability to pause the visualization.
-- Ability to customize the interval.
+### `yarn build`
 
-And anything you want to implement.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Task submission
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Create a `evo-ts-bootcamp` public repository in [GitHub](https://github.com/)
-and add `homeworks` folder there. Inside `homeworks` folder create `01-bubble-sort`
-folder and add you solution there.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Please share the link to your solution in appropriate Slack channel:
-[ts-bootcamp-common-2021](https://evolutiongaming.slack.com/archives/C01TBBGC18U)
-in the thread with the homework announcement when it is ready for review.
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
