@@ -1,0 +1,14 @@
+.array-container {
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.element {
+  width: 20px;
+  margin: 0 1px;
+  border: 1px solid lightgrey;
+  background-color: lightblue;
+  border-radius: 5px;
+}
