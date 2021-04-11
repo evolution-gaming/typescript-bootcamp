@@ -6,7 +6,7 @@ import TitleComponent from './title-component'
 import { generateRandomArray } from './utils/random'
 import { bubbleSort } from './utils/sort'
 
-const STEP_DELAY = 200
+const STEP_DELAY = 100
 
 type State = {
   array: number[]
