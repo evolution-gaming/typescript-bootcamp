@@ -4,35 +4,42 @@ import { generateRandomArray } from './utils/random'
 
 import './index.css'
 import { bubbleSort } from './utils/sort'
+import ControlsComponent from './controls-component'
 
 const STEP_DELAY = 300
 
 type State = {
   array: number[]
-  activeIndex: number;
+  activeIndex: number | null;
   done: boolean;
 }
 
 class App extends React.Component {
   state: State = {
-    array: [],
-    activeIndex: 0,
+    array: generateRandomArray(),
+    activeIndex: null,
     done: false,
   }
 
-  componentDidMount() {
-    const array = generateRandomArray(10)
-    this.setState({ array })
+  render() {
+    return (
+      <>
+        <ArrayComponent
+          array={this.state.array}
+          activeIndex={this.state.activeIndex}
+        />
 
-    const sorter = bubbleSort(array)
-    this.doSortStep(sorter)
+        <ControlsComponent
+          onNewSet={() => this.setState({ array: generateRandomArray() })}
+          onStart={() => this.start()}
+        />
+      </>
+    )
   }
 
-  render() {
-    return <ArrayComponent
-      array={this.state.array}
-      activeIndex={this.state.activeIndex}
-    ></ArrayComponent>
+  private start() {
+    const sorter = bubbleSort(this.state.array)
+    this.doSortStep(sorter)
   }
 
   private doSortStep(generator: Generator<any, any>,) {
