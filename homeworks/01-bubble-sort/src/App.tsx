@@ -1,43 +1,60 @@
 import React from 'react'
 import ArrayComponent from './array-component'
-import { generateRandomArray } from './utils/random'
-
-import './index.css'
-import { bubbleSort } from './utils/sort'
 import ControlsComponent from './controls-component'
+import './index.css'
+import TitleComponent from './title-component'
+import { generateRandomArray } from './utils/random'
+import { bubbleSort } from './utils/sort'
 
-const STEP_DELAY = 300
+const STEP_DELAY = 200
 
 type State = {
   array: number[]
   activeIndex: number | null;
-  done: boolean;
+  done: boolean | null;
 }
 
 class App extends React.Component {
   state: State = {
     array: generateRandomArray(),
     activeIndex: null,
-    done: false,
+    done: null,
+  }
+  private timeoutRef: NodeJS.Timeout | undefined;
+
+  componentWillUnmount() {
+    this.clearInterval()
   }
 
   render() {
     return (
       <>
+        <TitleComponent done={this.state.done} />
+
         <ArrayComponent
           array={this.state.array}
           activeIndex={this.state.activeIndex}
         />
 
         <ControlsComponent
-          onNewSet={() => this.setState({ array: generateRandomArray() })}
+          onNewSet={() => this.newSet()}
           onStart={() => this.start()}
         />
       </>
     )
   }
 
+  private newSet() {
+    this.clearInterval()
+    this.setState({
+      done: null,
+      activeIndex: null,
+      array: generateRandomArray()
+    })
+  }
+
   private start() {
+    this.setState({ done: false })
     const sorter = bubbleSort(this.state.array)
     this.doSortStep(sorter)
   }
@@ -51,13 +68,19 @@ class App extends React.Component {
         activeIndex: round.value.index
       })
 
-      setTimeout(() => this.doSortStep(generator), STEP_DELAY)
+      this.timeoutRef = setTimeout(() => this.doSortStep(generator), STEP_DELAY)
     } else {
       this.setState({
         array: round.value,
         activeIndex: null,
         done: true
       })
+    }
+  }
+
+  private clearInterval() {
+    if (this.timeoutRef) {
+      clearTimeout(this.timeoutRef)
     }
   }
 }
