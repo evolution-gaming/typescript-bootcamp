@@ -12,3 +12,7 @@
   background-color: lightblue;
   border-radius: 5px;
 }
+
+.element.active {
+  border: 2px solid gray;
+}
