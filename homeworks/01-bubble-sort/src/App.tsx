@@ -1,5 +1,5 @@
 import React from 'react'
-import ArrayComponent from './array/array'
+import ArrayComponent from './array-component'
 import { generateRandomArray } from './utils/random'
 
 import './index.css'
@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const array = generateRandomArray()
+    const array = generateRandomArray(10)
     this.setState({ array })
 
     const sorter = bubbleSort(array)

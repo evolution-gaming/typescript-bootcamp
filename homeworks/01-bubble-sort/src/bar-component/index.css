@@ -1,0 +1,26 @@
+.element {
+  width: 20px;
+  margin: 0 1px;
+  border: 1px solid lightgrey;
+  background-color: lightblue;
+  border-radius: 5px;
+  position: relative;
+}
+
+.element.active {
+ filter: contrast(0.75);
+}
+
+.element-text {
+  position: absolute;
+  top: -11px;
+  width: inherit;
+  text-align: center;
+  font-size: 8px;
+  color: grey;
+  visibility: hidden;
+}
+
+.element:hover > .element-text {
+  visibility: visible;
+}

@@ -1,0 +1,7 @@
+.array-container {
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
