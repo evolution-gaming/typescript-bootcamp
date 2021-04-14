@@ -1,0 +1,15 @@
+{
+  "name": "basic-unit-tests",
+  "version": "0.0.1",
+  "description": "05. Basic Unit Tests Lesson.",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch-all --coverage"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
