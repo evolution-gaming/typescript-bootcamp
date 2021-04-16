@@ -1,6 +1,6 @@
 # Homework
 
-**Deadline: 18.04.21 23:59**
+**Deadline: 18.04.2021 23:59 Minsk**
 
 1. Play games [https://flexboxfroggy.com]() and [http://cssgridgarden.com]() to
    master your flexbox and grid skills
@@ -12,4 +12,3 @@
    whatever. For CSS I would recommend to use CSS Modules or Styled Components
    for some extra practice. You could download and serve the images or use an
    existing API (e.g. unsplash) for your gallery.
-
