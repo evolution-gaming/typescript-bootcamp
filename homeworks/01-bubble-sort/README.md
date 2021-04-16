@@ -1,6 +1,6 @@
 # Bubble Sort Visualization
 
-**Deadline: 17.04.21 23:59**
+**Deadline: 17.04.2021 23:59 Minsk**
 
 ## Task description
 
@@ -12,8 +12,9 @@ What is required:
 
 - Use [Create React App with TypeScript](https://create-react-app.dev/docs/adding-typescript/).
 - Use React for rendering (ONLY [React Class Components](https://reactjs.org/docs/react-component.html)
-  and [React Stateless Components](https://reactjs.org/docs/components-and-props.html)).
+  and [React Function (Stateless) Components](https://reactjs.org/docs/components-and-props.html)).
 - Use React lifecycle methods and React state.
+- **Don't use React hooks.**
 - Define types as much and clear as possible.
 - Implement bubble sort algorithm and visualize it.
 - Deploy your implementation on the Internet (free resources:
@@ -40,8 +41,12 @@ And anything you want to implement.
 
 Create a `evo-ts-bootcamp` public repository in [GitHub](https://github.com/)
 and add `homeworks` folder there. Inside `homeworks` folder create `01-bubble-sort`
-folder and add you solution there.
+folder. Initiate Create React App inside `01-bubble-sort` and push it to `GitHub`.
 
-Please share the link to your solution in appropriate Slack channel:
+Create a new branch from your main branch, implement the task and create a
+Pull Request to your repository. Change accordingly the `README` file to describe
+your application and add the deployed link there as well.
+
+Please share the link of your Pull Request in appropriate Slack channel:
 [ts-bootcamp-common-2021](https://evolutiongaming.slack.com/archives/C01TBBGC18U)
 in the thread with the homework announcement when it is ready for review.
