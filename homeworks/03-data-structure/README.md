@@ -1,6 +1,6 @@
 # Data Structure
 
-**Deadline: 26.04.2021 23:59 Minsk**
+**Deadline: 25.04.2021 23:59 Minsk**
 
 ## Task description
 
