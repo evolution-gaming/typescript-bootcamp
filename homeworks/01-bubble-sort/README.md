@@ -1,5 +1,7 @@
 # Bubble Sort Visualization
 
+**Deadline: 17.04.21 23:59**
+
 ## Task description
 
 Your task is to develop a simple **Bubble Sort Visualization** app.

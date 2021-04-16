@@ -1,5 +1,7 @@
 # Homework
 
+**Deadline: 18.04.21 23:59**
+
 1. Play games [https://flexboxfroggy.com]() and [http://cssgridgarden.com]() to
    master your flexbox and grid skills
 2. Create a calendar layout using CSS Grid
