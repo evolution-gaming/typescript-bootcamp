@@ -6,8 +6,6 @@
 
 Your task is to develop several **data structure** algorithms.
 
-Please take a look our example: [Bubble Sort Visualization](https://evo-ts-bubble-sort.surge.sh/).
-
 What is required:
 
 - Implement `BinaryTree` interface.
