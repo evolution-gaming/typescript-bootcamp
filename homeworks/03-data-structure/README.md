@@ -19,6 +19,13 @@ What is required:
 - Cover all the code with tests (via `jest`). Coverage has to be 100%.
 - **DO NOT FORGET to define all types and access modifiers where needed**.
 
+Overall, it is required to implement the TypeScript project with data structure
+algorithms covered with tests.
+
+Any visualization of the algorithms is not required, but if you have strong
+willingness to use React and implement your ideas, you are always welcome.
+It is only appreciated any ideas in that direction.
+
 ### Binary Search Tree requirements
 
 Pseudo-interfaces of `BinaryTree` and `TreeNode`:
@@ -33,7 +40,7 @@ TreeNode {
 BinaryTree {
     constructor(tree: TreeNode): void;
 
-    setTree(value): this;
+    setTree(tree: TreeNode): this;
 
     // Depth-First Search (DFS) - inorder, preorder, postorder
     // Breadth-First Search (BFS) - breadth
@@ -55,13 +62,17 @@ BinarySearchTree extends BinaryTree<number> {
 
 `traverseType` has to be an enum with 4 values (3 of DFS and 1 of BFS).
 
+`setTree` method accepts the Root and reset the tree.
+
 `traverse` method has to return an array of values in order according to
 `traverseType`.
 
 `getColumn` method has to return an array of values in a particular column.
 `0` column is all elements under the root (including root). Every step to the
 right means +1 to the column order, every step to the left means -1 to the
-column order. Pay attention to visualization of what is the column:
+column order. The return array should include values in ascending order.
+
+Pay attention to visualization of what is the column:
 ![BST_columns](./assets/BST_columns.png "Binary Search Tree columns")
 
 All other additional methods and ideas to implement in `BinaryTree` or
