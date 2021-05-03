@@ -18,7 +18,7 @@ const array = [
     { type: "UPDATE_BALANCE", payload: 1000.0 },
     { type: "CREDIT", payload: 200.0 },
     { type: "CREDIT", payload: 100.0 },
-    { type: "SET_BALANCE_WITH_TAX" payload: 14.0 },
+    { type: "SET_BALANCE_WITH_TAX", payload: 14.0 },
     { type: "DEBIT", payload: 250.0 },
     { type: "UPDATE_BALANCE", payload: 1000.0 },
 ];
