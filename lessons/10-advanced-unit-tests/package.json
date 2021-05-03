@@ -1,0 +1,23 @@
+{
+  "name": "advanced-unit-tests",
+  "version": "0.0.1",
+  "description": "10. Advanced Unit Tests Lesson.",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:simple-check": "jest 01-basic.test.tsx",
+    "test:watch": "jest --watch-all --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
