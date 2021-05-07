@@ -9,7 +9,7 @@ describe("02-basic-RTL", () => {
       expect(getByTestId("message-box").innerHTML).toBe("hello")
     })
 
-    it.skip("assert that Message renders a div with the correct message inside (jest-dom-testing-library)", () => {
+    it("assert that Message renders a div with the correct message inside (jest-dom-testing-library)", () => {
       const { getByTestId } = render(<Message message={"hello"} />)
       expect(getByTestId("message-box")).toContainHTML("hello")
     })

@@ -1,8 +1,8 @@
 import React from "react"
 import { render } from "@testing-library/react"
-import { Message } from "./06-snapshot"
+import { Message } from "./07-snapshot"
 
-describe("06-snapshot", () => {
+describe("07-snapshot", () => {
   describe("Message", () => {
     it("has a proper content #1", () => {
       const { container } = render(
