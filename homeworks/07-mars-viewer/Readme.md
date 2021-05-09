@@ -1,4 +1,4 @@
-# Bubble Sort Visualization
+# Mars viewer
 
 **Deadline: 23.05.2021 23:59 Minsk**
 
