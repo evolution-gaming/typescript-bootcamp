@@ -1,0 +1,41 @@
+version: '3.2'
+
+services:
+  nodeserver:
+    container_name: my-container-name
+    hostname: nodeserver
+    build:
+      context: .
+      args:
+        - PORT=8081
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    networks:
+      - my-network
+  nodeserver2:
+    container_name: my-container-name2
+    hostname: nodeserver2
+    build:
+      context: .
+      args:
+        - PORT=8082
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    networks:
+      - my-network
+  nginx:
+    container_name: my-nginx
+    build:
+      context: ./nginx
+    ports:
+      - '4000:80'
+    networks:
+      - my-network
+    depends_on:
+      - nodeserver
+      - nodeserver2
+networks:
+  my-network:
+    external: true
