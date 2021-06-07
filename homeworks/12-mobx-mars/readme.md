@@ -1,4 +1,4 @@
-# Mars viewer
+# Mobx mars viewer
 
 **Deadline: 13.06.2021 23:59 Minsk**
 
@@ -15,7 +15,7 @@ What is required:
 - Use mobx. You can use create-react-app template for such purpose: `npx create-react-app --template typescript mobx-mars && cd mobx-mars && yarn add mobx mobx-react-lite`
 - Implement:
   - select sols
-  - keep fetched data from nasa api in redux-store
+  - keep fetched data from nasa api in mobx-store
   - add to favourites
   - remove from favourites
 - Define types as much and clear as possible.
