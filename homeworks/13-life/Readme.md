@@ -25,3 +25,16 @@ Requirements:
 * It must be possible to pause and draw squares on the field,
 * The game must be written using react and typescript,
 * Use of redux or mobx at your choice.
+
+## Task submission
+
+Create a `13-life` folder inside the `homeworks` folder in your
+`evo-ts-bootcamp` repository on [GitHub](https://github.com/).
+
+Create a new branch from your main branch, implement the task and create a
+Pull Request to your repository. Change accordingly the `README` file to describe
+your application and add the coverage report there.
+
+Please share the link of your Pull Request in appropriate Slack channel:
+[ts-bootcamp-common-2021](https://evolutiongaming.slack.com/archives/C01TBBGC18U)
+in the thread with the homework announcement when it is ready for review.
