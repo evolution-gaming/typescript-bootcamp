@@ -18,7 +18,7 @@ const array = [
     { type: "UPDATE_BALANCE", payload: 1000.0 },
     { type: "CREDIT", payload: 200.0 },
     { type: "CREDIT", payload: 100.0 },
-    { type: "SET_BALANCE_WITH_TAX" payload: 14.0 },
+    { type: "SUBTRACT_PERCENTAGE", payload: 14.0 },
     { type: "DEBIT", payload: 250.0 },
     { type: "UPDATE_BALANCE", payload: 1000.0 },
 ];
@@ -41,7 +41,7 @@ const balance = createStore(__YOUR_REDUCER__);
 balance.dispatch({ type: "UPDATE_BALANCE", payload: 1000.0 }); // balance = 1000.0
 balance.dispatch({ type: "CREDIT", payload: 200.0 }); // 800.0
 balance.dispatch({ type: "DEBIT", payload: 50.0 }); // 850.0
-balance.dispatch({ type: "SET_BALANCE_WITH_TAX" payload: 14.0 }); // 850.0 * (1 - 0.14) = 731
+balance.dispatch({ type: "SUBTRACT_PERCENTAGE" payload: 14.0 }); // 850.0 * (1 - 0.14) = 731
 ```
 
 Also, you need to publish your homework with dev tools:
