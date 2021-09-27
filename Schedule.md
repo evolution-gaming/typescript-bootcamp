@@ -1,42 +1,34 @@
-**The detailed schedule is [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vToQH_m9w3mYu0rEsRa2VJMpABbJXTpjZs8yOe5smdaUFQlO6Xyhtr05JzXivcuo96Q3nYe9hTiWc7Z/pubhtml?gid=0&single=true).**
+The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has the following tentative schedule:
 
-The [2021 Q2-Q3 bootcamp](https://typescript-bootcamp.evolution.com/by) has the following tentative schedule:
-
-| 2021-* | Topics                                               | Responsible                                        | Materials |
-|--------|------------------------------------------------------|----------------------------------------------------|-----------|
-| 04-05  | **Greeting. Basic React**                            | Artem Samofalov                                    |           |
-| 04-07  | **Basic Typescript**                                 | Dmitry Kiselyov                                    |           |
-| 04-09  | **CSS Tools**                                        | Anatoliy Belobrovik                                |           |
-| 04-12  | **Middle React**                                     | [Roman Romanovsky](https://github.com/rromanovsky) |           |
-| 04-14  | **Basic Unit tests**                                 | Raman Lukashyk                                     |           |
-| 04-19  | **Advanced React**                                   | [Roman Romanovsky](https://github.com/rromanovsky) |           |
-| 04-21  | **Basic Redux**                                      | Eugene Podiachev                                   |           |
-| 04-26  | **React Patterns**                                   | [Roman Romanovsky](https://github.com/rromanovsky) |           |
-| 04-28  | **Middle Redux**                                     | Eugene Podiachev                                   |           |
-| 05-03  | **Advanced Unit tests**                              | Raman Lukashyk                                     |           |
-| 05-05  | **Advanced Redux**                                   | Eugene Podiachev                                   |           |
-| 05-07  | **Advanced Typescript**                              | Dmitry Kiselyov                                    |           |
-| 05-12  | **Network**                                          | Vladislav Kovaliov                                 |           |
-| 05-14  | **Functional Reactive Programming: Streams (Intro)** | Raman Lukashyk                                     |           |
-| 05-17  | **MobX**                                             | Artem Samofalov                                    |           |
-| 05-19  | **Basic Node.js (Intro)**                            | Vladislav Kovaliov                                 |           |
-| 05-21  | **Browser API & Network**                            | Artem Samofalov                                    |           |
-| 05-24  | **SVG, CSS Animations**                              | Anatoliy Belobrovik                                |           |
-| 05-26  | **Browser API**                                      | Artem Samofalov                                    |           |
-| 05-28  | **CI & CD**                                          | Vitali Lashchanka                                  |           |
-| 05-31  | **Work with Canvas**                                 | Dzianis Kahnovich                                  |           |
-| 06-02  | **WebGL**                                            | Dzianis Kahnovich & Ivan Kalida                    |           |
-| 06-04  | **Webpack**                                          | Aliaksei Khatsianovich                             |           |
-| 06-07  | **Storybook**                                        | Anatoliy Belobrovik                                |           |
-| 06-09  | **Integration & E2E tests**                          | Vitali Lashchanka                                  |           |
-| 06-11  | **Development processes and practices**              | Juris Krikis                                       |           |
-| 06-14  | **Work on course project**                           | N/A                                                |           |
-| 06-16  | **Work on course project**                           | N/A                                                |           |
-| 06-18  | **Work on course project**                           | N/A                                                |           |
-| 06-21  | **Work on course project**                           | N/A                                                |           |
-| 06-23  | **Work on course project**                           | N/A                                                |           |
-| 03-25  | **Work on course project**                           | N/A                                                |           |
-| 06-28  | **Work on course project**                           | N/A                                                |           |
-| 06-30  | **Work on course project**                           | N/A                                                |           |
-| 07-02  | **Projects Presentation**                            | N/A                                                |           |
-| 07-07  | **Graduation**                                       | N/A                                                |           |
+| Date       | Topics                                               | Responsible                          |
+|------------|------------------------------------------------------|--------------------------------------|
+| 2021-12-06 | **Introduction. Basic React.**                       | TBD                                  |
+| 2021-12-08 | **Basic Typescript**                                 | TBD                                  |
+| 2021-12-10 | **CSS Tools**                                        | TBD                                  |
+| 2021-12-13 | **Middle React**                                     | TBD                                  |
+| 2021-12-15 | **Basic Unit tests**                                 | TBD                                  |
+| 2021-12-17 | **Advanced React**                                   | TBD                                  |
+| 2021-12-20 | **Basic Redux**                                      | TBD                                  |
+| 2021-12-22 | **React Patterns**                                   | TBD                                  |
+| 2021-12-27 | **Middle Redux**                                     | TBD                                  |
+| 2021-12-29 | **Advanced Unit tests**                              | TBD                                  |
+| 2022-01-03 | **Advanced Redux**                                   | TBD                                  |
+| 2022-01-05 | **Advanced Typescript**                              | TBD                                  |
+| 2022-01-07 | **Network**                                          | TBD                                  |
+| 2022-01-10 | **Functional Reactive Programming: Streams (Intro)** | TBD                                  |
+| 2022-01-12 | **MobX**                                             | TBD                                  |
+| 2022-01-14 | **Basic Node.js (Intro)**                            | TBD                                  |
+| 2022-01-17 | **Browser API & Network**                            | TBD                                  |
+| 2022-01-19 | **SVG, CSS Animations**                              | TBD                                  |
+| 2022-01-21 | **Browser API**                                      | TBD                                  |
+| 2022-01-24 | **CI & CD**                                          | TBD                                  |
+| 2022-01-26 | **Work with Canvas**                                 | TBD                                  |
+| 2022-01-28 | **WebGL**                                            | TBD                                  |
+| 2022-01-31 | **Webpack**                                          | TBD                                  |
+| 2022-02-02 | **Storybook**                                        | TBD                                  |
+| 2022-02-04 | **Integration & E2E tests**                          | TBD                                  |
+| 2022-02-08 | **Development processes and practices**              | [@jurisk](https://github.com/jurisk) |
+| ...        | **Work on course project**                           | N/A                                  |
+| 2022-03-14 | **Projects Presentation**                            | N/A                                  |
+| 2022-03-16 | **Projects Presentation**                            | N/A                                  |
+| 2022-03-18 | **Graduation**                                       | N/A                                  |

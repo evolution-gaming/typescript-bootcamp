@@ -4,7 +4,7 @@ This repository contains information on the [Evolution Gaming](https://eng.evolu
 
 ## Schedule
 
-[2021 Q2-Q3 bootcamp schedule](Schedule.md)
+[2021 Q4 - 2022 Q1 bootcamp schedule](Schedule.md)
 
 ## Preparation for the bootcamp
 
@@ -36,4 +36,5 @@ In case of issues:
 
 ## Status
 
-* The [2021 Q3-Q4 bootcamp](Schedule.md) will start soon
+* The [2021 Q3-Q4 bootcamp](/presentations/2021-q2-q3/Schedule.md) has concluded
+* The [2021 Q4 - 2022 Q1 bootcamp](Schedule.md) will start soon.
