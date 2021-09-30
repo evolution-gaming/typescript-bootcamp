@@ -22,9 +22,9 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2022-01-19 | Network, Functional Reactive Programming | TBD                                  |
 | 2022-01-21 | MobX - 2                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-24 | MobX - 3                                 | [@stesel](https://github.com/stesel)                                  |
-| 2022-01-26 | Browser API & Network                    | TBD                                  |
+| 2022-01-26 | Browser API & Network                    | [@marcozannellati](https://github.com/marcozannellati)                                  |
 | 2022-01-28 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                  |
-| 2022-01-31 | Browser API                              | TBD                                  |
+| 2022-01-31 | Browser API                              | [@marcozannellati](https://github.com/marcozannellati)                                  |
 | 2022-02-02 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)   |
 | 2022-02-04 | WebGL, Babylon.js - 1                    | TBD                                  |
 | 2022-02-07 | Babylon.js - 2                           | TBD                                  |
