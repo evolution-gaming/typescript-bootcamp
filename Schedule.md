@@ -15,17 +15,17 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2022-01-03 | React 5 - React Patterns                 | TBD                                  |
 | 2022-01-05 | Redux - 2                                | TBD                                  |
 | 2022-01-07 | Unit tests - 2                           | TBD                                  |
-| 2022-01-10 | MobX - 1                                 | TBD                                  |
+| 2022-01-10 | MobX - 1                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-12 | TypeScript 3                             | TBD                                  |
 | 2022-01-14 | TypeScript 4                             | TBD                                  |
 | 2022-01-17 | TypeScript 5                             | TBD                                  |
 | 2022-01-19 | Network, Functional Reactive Programming | TBD                                  |
-| 2022-01-21 | MobX - 2                                 | TBD                                  |
-| 2022-01-24 | MobX - 3                                 | TBD                                  |
+| 2022-01-21 | MobX - 2                                 | [@stesel](https://github.com/stesel)                                  |
+| 2022-01-24 | MobX - 3                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-26 | Browser API & Network                    | TBD                                  |
-| 2022-01-28 | SVG, CSS Animations                      | TBD                                  |
+| 2022-01-28 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                  |
 | 2022-01-31 | Browser API                              | TBD                                  |
-| 2022-02-02 | Work with Canvas                         | TBD                                  |
+| 2022-02-02 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)   |
 | 2022-02-04 | WebGL, Babylon.js - 1                    | TBD                                  |
 | 2022-02-07 | Babylon.js - 2                           | TBD                                  |
 | 2022-02-09 | Babylon.js - 3                           | TBD                                  |
