@@ -7,7 +7,7 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2021-12-10 | Packaging & Deploying - CRA, Webpack     | TBD                                  |
 | 2021-12-13 | TypeScript - 2                           | TBD                                  |
 | 2021-12-15 | React - 2                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
-| 2021-12-17 | CSS Tools                                | TBD                                  |
+| 2021-12-17 | CSS Tools                                | [@TheBeerCake](https://github.com/TheBeerCake)                                  |
 | 2021-12-20 | Unit tests - 1                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2021-12-22 | React - 3                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-27 | Redux - 1                                | TBD                                  |
