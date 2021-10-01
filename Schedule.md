@@ -19,7 +19,7 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2022-01-12 | TypeScript 3                             | TBD                                  |
 | 2022-01-14 | TypeScript 4                             | TBD                                  |
 | 2022-01-17 | TypeScript 5                             | TBD                                  |
-| 2022-01-19 | Network, Functional Reactive Programming | TBD                                  |
+| 2022-01-19 | Network, Functional Reactive Programming | [@2winsen](https://github.com/2winsen)                                  |
 | 2022-01-21 | MobX - 2                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-24 | MobX - 3                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-26 | Browser API & Network                    | [@marcozanellati](https://github.com/marcozanellati)                                  |
