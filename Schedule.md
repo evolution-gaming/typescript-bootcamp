@@ -3,16 +3,16 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | Date       | Topics                                   | Responsible                          |
 |------------|------------------------------------------|--------------------------------------|
 | 2021-12-06 | Introduction, TypeScript - 1             | TBD                                  |
-| 2021-12-08 | React - 1                                | TBD                                  |
+| 2021-12-08 | React - 1                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-10 | Packaging & Deploying - CRA, Webpack     | TBD                                  |
 | 2021-12-13 | TypeScript - 2                           | TBD                                  |
-| 2021-12-15 | React - 2                                | TBD                                  |
+| 2021-12-15 | React - 2                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-17 | CSS Tools                                | TBD                                  |
 | 2021-12-20 | Unit tests - 1                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
-| 2021-12-22 | React - 3                                | TBD                                  |
+| 2021-12-22 | React - 3                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-27 | Redux - 1                                | TBD                                  |
-| 2021-12-29 | React 4                                  | TBD                                  |
-| 2022-01-03 | React 5 - React Patterns                 | TBD                                  |
+| 2021-12-29 | React 4                                  | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
+| 2022-01-03 | React 5 - React Patterns                 | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2022-01-05 | Redux - 2                                | TBD                                  |
 | 2022-01-07 | Unit tests - 2                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2022-01-10 | MobX - 1                                 | [@stesel](https://github.com/stesel)                                  |
