@@ -26,9 +26,9 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2022-01-28 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                  |
 | 2022-01-31 | Browser API                              | [@marcozanellati](https://github.com/marcozanellati)                                  |
 | 2022-02-02 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)   |
-| 2022-02-04 | WebGL, Babylon.js - 1                    | TBD                                  |
-| 2022-02-07 | Babylon.js - 2                           | TBD                                  |
-| 2022-02-09 | Babylon.js - 3                           | TBD                                  |
+| 2022-02-04 | WebGL, Babylon.js - 1                    | [@hansagames](https://github.com/hansagames)                                  |
+| 2022-02-07 | Babylon.js - 2                           | [@hansagames](https://github.com/hansagames)                                  |
+| 2022-02-09 | Babylon.js - 3                           | [@hansagames](https://github.com/hansagames)                                  |
 | 2022-02-11 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2022-02-14 | Development processes and practices      | [@jurisk](https://github.com/jurisk) |
 | ...        | Work on course project                   | N/A                                  |
