@@ -10,10 +10,10 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2021-12-17 | CSS Tools                                | [@TheBeerCake](https://github.com/TheBeerCake)                                  |
 | 2021-12-20 | Unit tests - 1                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2021-12-22 | React - 3                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
-| 2021-12-27 | Redux - 1                                | TBD                                  |
+| 2021-12-27 | Redux - 1                                | [@uudens](https://github.com/uudens)                                  |
 | 2021-12-29 | React 4                                  | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2022-01-03 | React 5 - React Patterns                 | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
-| 2022-01-05 | Redux - 2                                | TBD                                  |
+| 2022-01-05 | Redux - 2                                | [@uudens](https://github.com/uudens)                                  |
 | 2022-01-07 | Unit tests - 2                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2022-01-10 | MobX - 1                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-12 | TypeScript 3                             | TBD                                  |
