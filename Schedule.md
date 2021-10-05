@@ -2,10 +2,10 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 
 | Date       | Topics                                   | Responsible                          |
 |------------|------------------------------------------|--------------------------------------|
-| 2021-12-06 | Introduction, TypeScript - 1             | TBD                                  |
+| 2021-12-06 | Introduction, TypeScript - 1             | [@gibson](https://github.com/gibson)                                  |
 | 2021-12-08 | React - 1                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-10 | Packaging & Deploying - CRA, Webpack     | TBD                                  |
-| 2021-12-13 | TypeScript - 2                           | TBD                                  |
+| 2021-12-13 | TypeScript - 2                           | [@gibson](https://github.com/gibson)                                  |
 | 2021-12-15 | React - 2                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                                  |
 | 2021-12-17 | CSS Tools                                | [@TheBeerCake](https://github.com/TheBeerCake)                                  |
 | 2021-12-20 | Unit tests - 1                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
@@ -16,9 +16,9 @@ The [2021 Q4 - 2022 Q1 bootcamp](https://typescript-bootcamp.evolution.com/) has
 | 2022-01-05 | Redux - 2                                | [@uudens](https://github.com/uudens)                                  |
 | 2022-01-07 | Unit tests - 2                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                                  |
 | 2022-01-10 | MobX - 1                                 | [@stesel](https://github.com/stesel)                                  |
-| 2022-01-12 | TypeScript 3                             | TBD                                  |
-| 2022-01-14 | TypeScript 4                             | TBD                                  |
-| 2022-01-17 | TypeScript 5                             | TBD                                  |
+| 2022-01-12 | TypeScript 3                             | [@gibson](https://github.com/gibson)                                  |
+| 2022-01-14 | TypeScript 4                             | [@gibson](https://github.com/gibson)                                  |
+| 2022-01-17 | TypeScript 5                             | [@gibson](https://github.com/gibson)                                  |
 | 2022-01-19 | Network, Functional Reactive Programming | [@2winsen](https://github.com/2winsen)                                  |
 | 2022-01-21 | MobX - 2                                 | [@stesel](https://github.com/stesel)                                  |
 | 2022-01-24 | MobX - 3                                 | [@stesel](https://github.com/stesel)                                  |
