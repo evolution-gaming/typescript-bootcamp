@@ -29,8 +29,10 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-03-14 | WebGL, Babylon.js - 1                    | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
 | 2022-03-16 | Babylon.js - 2                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
 | 2022-03-18 | Babylon.js - 3                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
-| 2022-03-21 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
-| 2022-03-23 | Development processes and practices      | [@jurisk](https://github.com/jurisk)                                           |
+| 2022-03-21 | Pixi.js - 1                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
+| 2022-03-23 | Pixi.js - 2                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
+| 2022-03-25 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
+| 2022-03-28 | Development processes and practices      | [@jurisk](https://github.com/jurisk)                                           |
 | ...        | Work on course project                   | N/A                                                                            |
 | 2022-04-25 | Projects Presentation - 1                | N/A                                                                            |
 | 2022-04-27 | Projects Presentation - 2                | N/A                                                                            |
