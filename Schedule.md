@@ -15,13 +15,13 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-02-09 | React 5 - React Patterns                 | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
 | 2022-02-11 | Redux - 2                                | [@uudens](https://github.com/uudens)                                           |
 | 2022-02-14 | Unit tests - 2                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
-| 2022-02-16 | MobX - 1                                 | [@stesel](https://github.com/stesel)                                           |
+| 2022-02-16 | MobX - 1                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-02-18 | TypeScript 3                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-21 | TypeScript 4                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-23 | TypeScript 5                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-25 | Network, Functional Reactive Programming | [@2winsen](https://github.com/2winsen)                                         |
-| 2022-02-28 | MobX - 2                                 | [@stesel](https://github.com/stesel)                                           |
-| 2022-03-02 | MobX - 3                                 | [@stesel](https://github.com/stesel)                                           |
+| 2022-02-28 | MobX - 2                                 | [@f0zze](https://github.com/f0zze)                                             |
+| 2022-03-02 | MobX - 3                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-03-04 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
 | 2022-03-07 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                 |
 | 2022-03-09 | Browser API & Network - 2                | [@marcozanellati](https://github.com/marcozanellati)                           |
