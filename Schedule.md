@@ -19,7 +19,7 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-02-18 | TypeScript 3                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-21 | TypeScript 4                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-23 | TypeScript 5                             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
-| 2022-02-25 | Network, Functional Reactive Programming | [@2winsen](https://github.com/2winsen)                                         |
+| 2022-02-25 | Functional Reactive Programming          | [@2winsen](https://github.com/2winsen)                                         |
 | 2022-02-28 | MobX - 2                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-03-02 | MobX - 3                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-03-04 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
