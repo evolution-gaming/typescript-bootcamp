@@ -28,13 +28,13 @@ The tests will fail (for now), this is normal and expected.
 ### Troubleshooting
 
 In case of issues:
-- Ask in the **[TypeScript Bootcamp chat](https://gitter.im/evolution-ts-bootcamp/community)**
+- Ask in the Evolution TypeScript Bootcamp Slack chat
 
-### Non-Js
+### Non-JS
 
 - [Learn Git Branching](https://learngitbranching.js.org/)
 
 ## Status
 
 * The [2021 Q3-Q4 bootcamp](/presentations/2021-q2-q3/Schedule.md) has concluded
-* The [2022 Q1-Q2 bootcamp](Schedule.md) will start soon.
+* The [2022 Q1-Q2 bootcamp](Schedule.md) will start on 2022-02-07.
