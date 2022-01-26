@@ -4,7 +4,7 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 |------------|------------------------------------------|--------------------------------------------------------------------------------|
 | 2022-02-07 | Introduction, TypeScript - 1             | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-09 | React - 1                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
-| 2022-02-11 | Packaging & Deploying - CRA, Webpack     | [@umidbekk](https://github.com/umidbekk)                                       |
+| 2022-02-11 | Packaging & Deploying - Webpack          | [@umidbekk](https://github.com/umidbekk)                                       |
 | 2022-02-14 | TypeScript - 2                           | [@gibson](https://github.com/gibson), [@umidbekk](https://github.com/umidbekk) |
 | 2022-02-16 | React - 2                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
 | 2022-02-18 | CSS Tools                                | [@TheBeerCake](https://github.com/TheBeerCake)                                 |
