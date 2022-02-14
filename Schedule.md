@@ -10,8 +10,8 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-02-18 | CSS Tools                                | [@TheBeerCake](https://github.com/TheBeerCake)                                 |
 | 2022-02-21 | Unit tests - 1                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
 | 2022-02-23 | React - 3                                | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
-| 2022-02-25 | Redux - 1                                | [@uudens](https://github.com/uudens)                                           |
-| 2022-02-28 | React 4                                  | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
+| 2022-02-25 | React 4                                  | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
+| 2022-02-28 | Redux - 1                                | [@uudens](https://github.com/uudens)                                           |
 | 2022-03-02 | React 5 - React Patterns                 | [@vadym-tarasich](https://github.com/vadym-tarasich)                           |
 | 2022-03-04 | Redux - 2                                | [@uudens](https://github.com/uudens)                                           |
 | 2022-03-07 | Unit tests - 2                           | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
