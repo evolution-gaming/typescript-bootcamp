@@ -22,19 +22,19 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-03-21 | Functional Reactive Programming          | [@2winsen](https://github.com/2winsen)                                         |
 | 2022-03-23 | MobX - 2                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-03-25 | MobX - 3                                 | [@f0zze](https://github.com/f0zze)                                             |
-| 2022-03-28 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
-| 2022-03-30 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                 |
-| 2022-04-01 | Browser API & Network - 2                | [@marcozanellati](https://github.com/marcozanellati)                           |
-| 2022-04-04 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)                                   |
-| 2022-04-06 | WebGL, Babylon.js - 1                    | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
-| 2022-04-08 | Babylon.js - 2                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
-| 2022-04-11 | Babylon.js - 3                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
-| 2022-04-13 | Pixi.js - 1                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
-| 2022-04-20 | Pixi.js - 2                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
-| 2022-04-22 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
-| 2022-04-25 | Development processes and practices      | [@jurisk](https://github.com/jurisk)                                           |
+| 2022-03-30 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
+| 2022-04-01 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                 |
+| 2022-04-04 | Browser API & Network - 2                | [@marcozanellati](https://github.com/marcozanellati)                           |
+| 2022-04-06 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)                                   |
+| 2022-04-08 | WebGL, Babylon.js - 1                    | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
+| 2022-04-11 | Babylon.js - 2                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
+| 2022-04-13 | Babylon.js - 3                           | [@hansagames](https://github.com/hansagames), [@ArmandsB](https://github.com/ArmandsB)                                   |
+| 2022-04-20 | Pixi.js - 1                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
+| 2022-04-22 | Pixi.js - 2                              | [@dmytroantonkin](https://github.com/dmytroantonkin)                           |
+| 2022-04-25 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
+| 2022-04-27 | Development processes and practices      | [@jurisk](https://github.com/jurisk)                                           |
 | ...        | Work on course project                   | N/A                                                                            |
-| 2022-05-16 | Projects Presentation - 1                | N/A                                                                            |
-| 2022-05-19 | Projects Presentation - 2                | N/A                                                                            |
+| 2022-05-19 | Projects Presentation - 1                | N/A                                                                            |
 | 2022-05-20 | Projects Presentation - 2                | N/A                                                                            |
+| 2022-05-21 | Projects Presentation - 2                | N/A                                                                            |
 | 2022-05-23 | Graduation                               | N/A                                                                            |
