@@ -34,7 +34,7 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-05-20 | Integration & E2E tests                  | [@dmitrijs-balcers](https://github.com/dmitrijs-balcers)                       |
 | 2022-05-23 | Development processes and practices      | [@jurisk](https://github.com/jurisk)                                           |
 | ...        | Work on course project                   | N/A                                                                            |
-| 2022-06-19 | Projects Presentation - 1                | N/A                                                                            |
+| 2022-06-17 | Projects Presentation - 1                | N/A                                                                            |
 | 2022-06-20 | Projects Presentation - 2                | N/A                                                                            |
 | 2022-06-21 | Projects Presentation - 2                | N/A                                                                            |
 | 2022-06-23 | Graduation                               | N/A                                                                            |
