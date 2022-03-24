@@ -22,7 +22,7 @@ The [2022 Q1-Q2 bootcamp](https://typescript-bootcamp.evolution.com/) has the fo
 | 2022-04-27 | Functional Reactive Programming          | [@2winsen](https://github.com/2winsen)                                         |
 | 2022-04-29 | MobX - 2                                 | [@f0zze](https://github.com/f0zze)                                             |
 | 2022-05-02 | MobX - 3                                 | [@f0zze](https://github.com/f0zze)                                             |
-| 2022-05-05 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
+| 2022-05-06 | Browser API & Network - 1                | [@marcozanellati](https://github.com/marcozanellati)                           |
 | 2022-05-09 | SVG, CSS Animations                      | [@iamusualguy](https://github.com/iamusualguy)                                 |
 | 2022-05-11 | Browser API & Network - 2                | [@marcozanellati](https://github.com/marcozanellati)                           |
 | 2022-05-13 | Work with Canvas                         | [@myanovskiy](https://github.com/myanovskiy)                                   |
