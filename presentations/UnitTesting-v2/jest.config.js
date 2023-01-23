@@ -12,8 +12,8 @@ module.exports = {
             preset: "ts-jest",
             setupFilesAfterEnv: ["<rootDir>/__tests__/setup.ts"],
             roots: [
-                // "<rootDir>/react-example/",
-                // "<rootDir>/homework/",
+                "<rootDir>/react-example/",
+                "<rootDir>/homework/",
                 "<rootDir>/react-homework/"
             ],
         },

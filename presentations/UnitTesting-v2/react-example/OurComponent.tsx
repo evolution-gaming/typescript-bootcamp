@@ -4,10 +4,10 @@ export const OurComponent = () => {
     const [search, setSearch] = React.useState("");
 
     const [items, setItems] = React.useState([
-        "Item 1",
-        "Item 2",
-        "Item 3",
-        "Item 4",
+        "Item number one",
+        "Some other item",
+        "And another item",
+        "Lastly number four",
     ]);
 
     const onChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +17,7 @@ export const OurComponent = () => {
     return (
         <div>
             <h1>Our Component</h1>
-            <input type="text" placeholder="out awesome input" value={search} onChange={onChange} />
+            <input type="text" placeholder="our awesome input" value={search} onChange={onChange} />
             <ul>
                 {items.length ? items.filter(e => e.includes(search)).map((item, index) => <li key={index}>{item}</li>) : <li>no items</li>}
             </ul>
