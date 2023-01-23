@@ -1,9 +1,12 @@
+import { calculateTotalPriceWithPercentageDiscount } from './helpers'
+
 export type Item = {
     name: string;
     price: number;
     quantity: number;
 }
-export const items:Item[] = [
+
+const items:Item[] = [
     { name: 'Bread', price: 0.8, quantity: 1 },
     { name: 'Milk', price: 1.15, quantity: 2 },
     { name: 'Cheese', price: 1.3, quantity: 1 },
@@ -13,30 +16,18 @@ export const items:Item[] = [
 ]
 
 const discount = {
-    percent: 0.1,
+    percent: 20,
     threshold: 5,
 }
 
-/**
- * TODO: Homework
- * Implement discount card from basic-example
- * If there is a coupon code, apply the discount by 95%
- * Use the following:
- * it.each()
- * toBe()
- * toEqual()
- * toBeGreaterThan()
- * toBeLessThan()
- * toBeGreaterThanOrEqual()
- * toBeLessThanOrEqual()
- * toBeCloseTo()
- */
-export function calculateTotalPrice(items: Item[]): number {
+export function calculateTotalPrice(items: Item[], discount: { percent: number, threshold: number }): number {
     let shipping = 20
-    const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    let total = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    const totalWithDiscount = calculateTotalPriceWithPercentageDiscount(total, discount.percent)
+
     if (total > discount.threshold) {
-        return total - total * discount.percent + shipping
-    } else {
-        return total + shipping
+        total = totalWithDiscount
     }
+
+    return total + shipping
 }
