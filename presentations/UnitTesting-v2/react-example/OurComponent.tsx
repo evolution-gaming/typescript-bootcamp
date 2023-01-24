@@ -1,22 +1,22 @@
-import * as React from 'react';
+import * as React from 'react'
 
 export const OurComponent = () => {
-    const [search, setSearch] = React.useState("");
+    const [search, setSearch] = React.useState("")
 
     const [items, setItems] = React.useState([
         "Item number one",
         "Some other item",
         "And another item",
         "Lastly number four",
-    ]);
+    ])
 
     const onChangeHandler = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
-    }, []);
+        setSearch(e.target.value)
+    }, [])
 
     const onClickHandler = React.useCallback(() => {
-        setSearch("four");
-    }, []);
+        setSearch("four")
+    }, [])
 
     const nextPageHandler = React.useCallback(() => {
         setTimeout(() => {
@@ -40,4 +40,4 @@ export const OurComponent = () => {
             <button onClick={nextPageHandler}>Next page</button>
         </div>
     )
-};
+}

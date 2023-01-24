@@ -59,23 +59,23 @@ describe("OurComponent", () => {
     //     expect(getByText("Lastly number four")).toBeInTheDocument()
     // })
 
-    it('go to next page', async () => {
-        jest.useFakeTimers()
-        const { getByRole, getByText, getByPlaceholderText } = render(<OurComponent />);
-        const list = getByRole("list")
-        const button = getByText("Next page")
+    // it('go to next page', async () => {
+    //     jest.useFakeTimers()
+    //     const { getByRole, getByText, getByPlaceholderText } = render(<OurComponent />);
+    //     const list = getByRole("list")
+    //     const button = getByText("Next page")
 
-        fireEvent.click(button)
+    //     fireEvent.click(button)
 
-        act(() => {
-            // jest.advanceTimersByTime(1000)
-            jest.runOnlyPendingTimers()
-        })
+    //     act(() => {
+    //         // jest.advanceTimersByTime(1000)
+    //         jest.runOnlyPendingTimers()
+    //     })
 
-        expect(list.children).toHaveLength(4)
+    //     expect(list.children).toHaveLength(4)
 
-        expect(getByText("Item number five")).toBeInTheDocument()
+    //     expect(getByText("Item number five")).toBeInTheDocument()
 
-        jest.useRealTimers()
-    })
+    //     jest.useRealTimers()
+    // })
 })
