@@ -1,7 +1,15 @@
 import React from "react"
-import ReactDOM from "react-dom/client"
+import { createRoot } from "react-dom/client"
 import { OurComponent } from "./OurComponent"
+import { Provider } from "react-redux"
+import { store, OurCounterReduxComponent } from "./ReduxExample"
 
-ReactDOM.createRoot(document.getElementById("example") as HTMLElement).render(
+createRoot(document.getElementById("example") as HTMLElement).render(
     <OurComponent />
+)
+
+createRoot(document.getElementById('redux-example') as HTMLElement).render(
+    <Provider store={store}>
+        <OurCounterReduxComponent/>
+    </Provider>
 )
