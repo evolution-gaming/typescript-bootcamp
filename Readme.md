@@ -31,4 +31,4 @@ In case of issues:
 
 * The [2021 Q3-Q4 bootcamp](presentations/OldSchedules/2021-q2-q3/Schedule.md) has concluded
 * The [2022 Q1-Q2 bootcamp](presentations/OldSchedules/2022-q1-q3/Schedule.md) has concluded
-* The [2023 Q1-Q2 bootcamp](Schedule.md) will start on 2023-01-23.
+* The [2023 Q1-Q2 bootcamp](Schedule.md) is running.
