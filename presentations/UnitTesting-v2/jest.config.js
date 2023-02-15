@@ -4,7 +4,11 @@ module.exports = {
             displayName: "node env",
             testEnvironment: "node",
             preset: "ts-jest",
-            roots: ["<rootDir>/basic-example/"],
+            roots: [
+                "<rootDir>/basic-example/",
+                "<rootDir>/shopping-cart-example/"
+            ],
+
         },
         {
             displayName: "browser env",
@@ -13,8 +17,6 @@ module.exports = {
             setupFilesAfterEnv: ["<rootDir>/__tests__/setup.ts"],
             roots: [
                 "<rootDir>/react-example/",
-                "<rootDir>/homework/",
-                "<rootDir>/react-homework/"
             ],
         },
     ]
