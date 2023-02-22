@@ -5,6 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "test:node": "jest --selectProjects=node",
+    "test:browser": "jest --selectProjects=jsdom",
     "start": "vite",
     "typecheck": "tsc --noEmit"
   },

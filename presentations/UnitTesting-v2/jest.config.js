@@ -1,17 +1,15 @@
 module.exports = {
     projects: [
         {
-            displayName: "node env",
+            displayName: "node",
             testEnvironment: "node",
             preset: "ts-jest",
             roots: [
-                "<rootDir>/basic-example/",
-                "<rootDir>/shopping-cart-example/"
+                "<rootDir>/src/",
             ],
-
         },
         {
-            displayName: "browser env",
+            displayName: "jsdom",
             testEnvironment: "jsdom",
             preset: "ts-jest",
             setupFilesAfterEnv: ["<rootDir>/__tests__/setup.ts"],
