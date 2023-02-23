@@ -1,1 +1,0 @@
-export let ten = 10
