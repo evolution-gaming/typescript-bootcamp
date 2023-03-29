@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "outDir": "./bin/",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "module": "es6",
+      "target": "es6",
+      "jsx": "react",
+      "allowJs": true,
+      "typeRoots": ["./types", "node_modules/@types"],
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.d.ts"
+    ]
+  }
